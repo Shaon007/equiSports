@@ -1,4 +1,5 @@
-// import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
+
 const AddNewProduct = () => {
   const handleAddCoffee = e => {
     e.preventDefault();
@@ -14,26 +15,26 @@ const AddNewProduct = () => {
     const price = form.price.value;
     const newProduct = { name, rating, customization, processing, stock, category, details, photo, price };
     console.log(newProduct);
-    // fetch('', {
-    //   method: 'POST',
-    //   headers: {
-    //     'content-type': 'application/json',
-    //   },
-    //   body: JSON.stringify(newProduct),
-    // })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     console.log(data);
-    //     if (data.insertedId) {
-    //       Swal.fire({
-    //         title: 'Success!',
-    //         text: 'Added New Product',
-    //         icon: 'success',
-    //         confirmButtonText: 'Added',
-    //       });
-    //       form.reset();
-    //     }
-    //   });
+    fetch('http://localhost:5000/product', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(newProduct),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: 'Success!',
+            text: 'Added New Product',
+            icon: 'success',
+            confirmButtonText: 'Added',
+          });
+          form.reset();
+        }
+      });
   };
   return (
     <div className="flex justify-center items-center mt-10">

@@ -1,8 +1,11 @@
+import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
+  const product = useLoaderData()
   return (
     <div>
-      Home
+      <h2>Home</h2>
+      <p>Total : {product.length}</p>
     </div>
   );
 };
