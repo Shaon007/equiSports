@@ -1,35 +1,205 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+  const { user, logOut } = useContext(AuthContext);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-
-    <div className='navbar grid grid-cols-3 justify-between w-11/12 mx-auto'>
-      <div>EquiSports</div>
-      <div className='hidden lg:flex gap-5 '>
-        <Link to='/'>Home</Link>
-        <Link to='/addNewProduct'>Add Product</Link>
-        <Link to='/allProduct'>All Product</Link>
-        <Link to='/myProduct'>My Product</Link>
-      </div>
-      <div className='flex gap-4 justify-end'>
-        <div>
-          <button className='rounded-full btn'>icon</button>
-        </div>
-        <div>
-          <button>Login</button>
-        </div>
-        <div>
-          <button>Logout</button>
-        </div>
+    <div className="max-w-[1600px] mx-auto flex justify-between items-center p-2 px-6 bg-[#9333EA] sticky top-0 z-50 shadow-lg">
+      {/* Logo */}
+      <div className="text-lg gap-2 text-white flex justify-center items-center">
+        <Link to='/'>
+          <img
+            className="h-12"
+            src="https://i.postimg.cc/FzVNv083/Screenshot-2024-11-21-173756-removebg-preview.png"
+            alt="Logo"
+          />
+        </Link>
       </div>
 
+      {/* Hamburger */}
+      <div className="flex gap-4 lg:hidden">
+        <div>
+          <Link to="/myProfile" className="w-10 h-10">
+            {user && user?.photoURL ? (
+              <img
+                className="rounded-full object-cover w-10 h-10 border-2 border-white"
+                src={user.photoURL}
+                alt="User"
+              />
+            ) : (
+              <img
+                className="rounded-full object-cover w-10 h-10 border-2 border-white"
+                src="https://i.pinimg.com/736x/07/f3/88/07f388d9df8a9eff8b048d7ce60888db.jpg"
+                alt="Default User"
+              />
+            )}
+          </Link>
+        </div>
+        <div
+          className="lg:hidden flex items-center"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="w-8 h-8 text-white"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </div>
+      </div>
+
+      {/* Dropdown Menu */}
+      <div
+        className={`lg:flex gap-5 ml-5 text-lg ${isMenuOpen
+          ? "flex flex-col absolute top-full left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-auto bg-[#9333EA] p-4 space-y-3 z-50"
+          : "hidden"
+          } lg:block`}
+      >
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `text-white ${isActive ? "border-b-2 border-white pb-1" : ""}`
+          }
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/allProduct"
+          className={({ isActive }) =>
+            `text-white ${isActive ? "border-b-2 border-white pb-1" : ""}`
+          }
+        >
+          All Equipment
+        </NavLink>
+        <NavLink
+          to="/addNewProduct"
+          className={({ isActive }) =>
+            `text-white ${isActive ? "border-b-2 border-white pb-1" : ""}`
+          }
+        >
+          Add New
+        </NavLink>
+        <NavLink
+          to="/myProduct"
+          className={({ isActive }) =>
+            `text-white ${isActive ? "border-b-2 border-white pb-1" : ""}`
+          }
+        >
+          My Equipment
+        </NavLink>
+
+        <div className="flex flex-col lg:hidden items-center gap-4 mt-4">
+          <Link to="/">
+            {user?.photoURL ? (
+              <img
+                className="rounded-full object-cover w-12 h-12 border-2 border-white"
+                src={user.photoURL}
+                alt="User"
+              />
+            ) : (
+              <img
+                className="rounded-full object-cover w-12 h-12 border-2 border-white"
+                src="https://i.pinimg.com/736x/07/f3/88/07f388d9df8a9eff8b048d7ce60888db.jpg"
+                alt="Default User"
+              />
+            )}
+          </Link>
+          {user && user?.email ? (
+            <button
+              onClick={logOut}
+              className="px-4 py-2 border-2 text-white rounded-lg hover:bg-white hover:text-[#9333EA] transition"
+            >
+              Log Out
+            </button>
+          ) : (
+              <div className="flex gap-2">
+                <Link
+                  to="/login"
+                  className="px-4 py-2 border-2 rounded-lg hover:bg-white hover:text-[#9333EA] transition"
+                >
+                  Log In
+                </Link>
+                <Link
+                  to="/register"
+                  className="px-4 py-2 border-2 rounded-lg hover:bg-white hover:text-[#9333EA] transition"
+                >
+                  Sign Up
+                </Link>
+              </div>
+
+          )}
+        </div>
+      </div>
+
+      {/* User Section (visible on larger screens) */}
+      <div className="hidden lg:flex items-center gap-3 relative">
+        <div
+          className="relative"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <Link to="/" className="w-10 h-10">
+            {user && user?.photoURL ? (
+              <img
+                className="rounded-full object-cover w-10 h-10 border-2 border-white"
+                src={user.photoURL}
+                alt="User"
+              />
+            ) : (
+              <img
+                className="rounded-full object-cover w-10 h-10 border-2 border-white"
+                src="https://i.pinimg.com/736x/07/f3/88/07f388d9df8a9eff8b048d7ce60888db.jpg"
+                alt="Default User"
+              />
+            )}
+          </Link>
+
+          {/* Tooltip for Username */}
+          {isHovered && user?.displayName && (
+            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 rounded bg-gray-900 text-white text-sm shadow-lg">
+              {user.displayName}
+            </div>
+          )}
+        </div>
+
+        {/* Login/Logout Button */}
+        {user && user?.email ? (
+          <button
+            onClick={logOut}
+            className="px-4 py-2 border-2 rounded-lg hover:bg-white hover:text-[#9333EA] transition"
+          >
+            Log Out
+          </button>
+        ) : (
+            <div className="flex gap-2">
+              <Link
+                to="/login"
+                className="px-4 py-2 border-2 rounded-lg hover:bg-white hover:text-[#9333EA] transition"
+              >
+                Log In
+              </Link>
+              <Link
+                to="/register"
+                className="px-4 py-2 border-2 rounded-lg hover:bg-white hover:text-[#9333EA] transition"
+              >
+                Sign Up
+              </Link>
+          </div>
+
+        )}
+      </div>
     </div>
   );
 };
