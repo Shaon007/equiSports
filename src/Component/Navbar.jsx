@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className='hidden lg:flex gap-5 '>
         <Link to='/'>Home</Link>
         <Link to='/addNewProduct'>Add Product</Link>
-        <Link to='/updateProduct'>Update Product</Link>
+        <Link to='/allProduct'>All Product</Link>
         <Link to='/myProduct'>My Product</Link>
       </div>
       <div className='flex gap-4 justify-end'>
