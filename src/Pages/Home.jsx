@@ -16,10 +16,10 @@ const Home = () => {
   //  filter by category
   const handleFilterByCategory = (category) => {
     if (category === "All") {
-      setFilteredProducts(products); // Show all products
+      setFilteredProducts(products);
     } else {
       const filtered = products.filter((product) => product.category === category);
-      setFilteredProducts(filtered); // Show products matching the selected category
+      setFilteredProducts(filtered); 
     }
   };
 

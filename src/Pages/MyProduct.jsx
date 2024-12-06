@@ -4,10 +4,9 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
 
 const MyProduct = () => {
-  const { user } = useContext(AuthContext); // Get the logged-in user's data
+  const { user } = useContext(AuthContext);
   const products = useLoaderData();
 
-  // Filter products by the logged-in user's email
   const filteredProducts = products.filter(
     (product) => product.host?.email === user?.email
   );
