@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 
 const AllProduct = () => {
   const products = useLoaderData();
@@ -13,6 +13,7 @@ const AllProduct = () => {
               <th className="px-6 py-3">Category</th>
               <th className="px-6 py-3">Price</th>
               <th className="px-6 py-3">Stock</th>
+              <th className="px-6 py-3">Action</th> {/* New Action Column */}
             </tr>
           </thead>
           <tbody>
@@ -27,6 +28,17 @@ const AllProduct = () => {
                 <td className="px-6 py-4">{product.category}</td>
                 <td className="px-6 py-4">{product.price}</td>
                 <td className="px-6 py-4">{product.stock}</td>
+                <td className="px-6 py-4">
+                  {/* View More Button */}
+                  <Link
+                    to={`/product/${product._id}`} // Assuming this is the route to the product details page
+                    className="text-blue-600 hover:text-blue-800"
+                  >
+                    <button className="px-4 py-2 bg-blue-500 text-white rounded-lg">
+                      View More
+                    </button>
+                  </Link>
+                </td>
               </tr>
             ))}
           </tbody>

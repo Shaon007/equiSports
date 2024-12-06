@@ -2,10 +2,27 @@ import React, { useEffect, useState } from "react";
 
 const AutoSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Images array
   const images = [
     "https://www.vivacamera.nl/wp-content/uploads/sportfotografie-gids.jpg",
     "https://www.arabianbusiness.com/cloud/2021/09/14/WDiHUscY-footballsoccer-1200x800.jpg",
     "https://www.fotovalley.com/wp-content/uploads/2020/08/sports-photography-tips-for-amazing-photos-of-sports-1-1.jpg",
+  ];
+
+  const sliderContent = [
+    {
+      slogan: "Ride with Confidence, Gear Up Right!",
+      subheading: "Discover top-quality cycling equipment designed for performance, comfort, and durability.",
+    },
+    {
+      slogan: "Own the Field, Play Like a Pro!",
+      subheading: "Elevate your game with gear designed for champions.",
+    },
+    {
+      slogan: "Run Faster, Go Further!",
+      subheading: "Maximize your performance and enjoy every stride with premium accessories.",
+    },
   ];
 
   useEffect(() => {
@@ -31,6 +48,12 @@ const AutoSlider = () => {
               className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               alt={`Slide ${index + 1}`}
             />
+
+            {/* Slogan  */}
+            <div className="absolute top-0 left-0 w-full h-full bg-black/50 flex flex-col justify-center items-start px-4 text-white">
+              <span className="pl-10 pt-20 text-5xl w-[460px] font-bold">{sliderContent[index].slogan}</span>
+              <p className="pl-10 w-[400px] mt-2 text-xl">{sliderContent[index].subheading}</p>
+            </div>
           </div>
         ))}
       </div>

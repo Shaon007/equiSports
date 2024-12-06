@@ -14,7 +14,7 @@ const Home = () => {
     setCategories(uniqueCategories);
   }, [products]);
 
-  //  filter by category
+  // filter by category
   const handleFilterByCategory = (category) => {
     if (category === "All") {
       setFilteredProducts(products);
@@ -24,31 +24,48 @@ const Home = () => {
     }
   };
 
+  const categoryImages = {
+    All: "https://i.pinimg.com/736x/7a/d3/d5/7ad3d59842654cd81ecc3c5507b4746b.jpg",
+    Cricket: "https://i.pinimg.com/736x/c7/20/3c/c7203ce1302419a5d768d66cb4c97fb5.jpg",
+    Football: "https://i.pinimg.com/736x/6b/38/ef/6b38ef66e69c53fc92a56766ff56adff.jpg",
+    Cycling: "https://i.pinimg.com/736x/d3/f6/43/d3f6435e91b5f5e16beb9413c1682308.jpg",
+    Running: "https://i.pinimg.com/736x/b9/ca/ab/b9caab07dab6ed5b5078556b0a6b0204.jpg",
+    Accessories: "https://i.pinimg.com/736x/f9/bd/26/f9bd264beab7cc4d0954fa40d5603654.jpg"
+  };
+
   return (
     <div className="w-full mx-auto">
       <div className="">
-        <AutoSlider></AutoSlider>
+        <AutoSlider />
       </div>
 
       <div className="w-11/12 mx-auto">
         {/* Category Filter Buttons */}
-
-        <div className="flex justify-center gap-4 mb-6 flex-wrap">
+        <div className="flex justify-center gap-4 my-24 flex-wrap">
           <button
             onClick={() => handleFilterByCategory("All")}
-            className="btn btn-ghost btn-active border px-4 py-2 rounded-lg text-sm"
+            className="btn btn-active p-2 h-36 w-36 rounded-full "
           >
-            All
+            <img className="rounded-full w-32 h-32 transform transition-all duration-300 hover:scale-110" src="https://i.pinimg.com/736x/7a/d3/d5/7ad3d59842654cd81ecc3c5507b4746b.jpg" alt="All" />
+            <p className="pt-2">All</p>
           </button>
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => handleFilterByCategory(category)}
-              className="btn btn-ghost btn-active border px-4 py-2 rounded-lg text-sm"
-            >
-              {category}
-            </button>
-          ))}
+
+          {categories.map((category) => {
+            if (categoryImages[category]) {
+              return (
+                <button
+                  key={category}
+                  onClick={() => handleFilterByCategory(category)}
+                  className="btn btn-active  p-2 h-36 w-36 rounded-full"
+                >
+                  {/* Category Image */}
+                  <img className="object-cover rounded-full w-32 h-32 transform transition-all duration-300 hover:scale-110" src={categoryImages[category]} alt={category} />
+                  <p className="pt-2">{category}</p>
+                </button>
+              );
+            }
+            return null;
+          })}
         </div>
 
         {/* Product Grid */}
