@@ -1,22 +1,22 @@
 import { useLoaderData } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+import { Link } from "react-router-dom";
 
-// Assuming you have a context or props to get the user's email
-const MyProduct = ({ userEmail }) => {
+const MyProduct = () => {
+  const { user } = useContext(AuthContext); // Get the logged-in user's data
   const products = useLoaderData();
 
-  // Filter products to only include those matching the user's email
+  // Filter products by the logged-in user's email
   const filteredProducts = products.filter(
-    (product) => product.host?.email === userEmail
+    (product) => product.host?.email === user?.email
   );
 
   return (
     <div className="bg-gray-100 py-10">
       <div className="container mx-auto px-4">
         <div className="mb-6">
-          <h1 className="text-4xl font-bold text-gray-900">
-            My Added Products
-          </h1>
+          <h1 className="text-4xl font-bold text-gray-900">My Added Products</h1>
           <p className="text-lg text-gray-700">
             {filteredProducts.length > 0
               ? "Here are the products you added:"
@@ -25,7 +25,7 @@ const MyProduct = ({ userEmail }) => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProducts.map((product, index) => {
-            const { name, rating, details, photo, price } = product;
+            const { _id, name, rating, details, photo, price } = product;
             return (
               <div
                 key={index}
@@ -44,9 +44,13 @@ const MyProduct = ({ userEmail }) => {
                   <p className="text-gray-900 font-semibold mt-2">
                     Price: ${price}
                   </p>
-                  <p className="text-yellow-500 text-sm">
-                    Rating: {rating}/5
-                  </p>
+                  <p className="text-yellow-500 text-sm">Rating: {rating}/5</p>
+
+                  <div className="flex gap-4 mt-4">
+                    <Link to={`/product/${_id}`} className="btn btn-primary">
+                      View Details
+                    </Link>
+                  </div>
                 </div>
               </div>
             );

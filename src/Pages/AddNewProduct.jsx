@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
+
 const AddNewProduct = () => {
-  const {user}=useContext(AuthContext)
-  const handleAddProduct = e => {
+  const { user } = useContext(AuthContext);
+
+  const handleAddProduct = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -15,6 +17,7 @@ const AddNewProduct = () => {
     const details = form.details.value;
     const photo = form.photo.value;
     const price = form.price.value;
+
     const newProduct = {
       name,
       rating,
@@ -28,10 +31,12 @@ const AddNewProduct = () => {
       host: {
         name: user?.displayName,
         email: user?.email,
-        photo: user?.photoURL
-      }
+        photo: user?.photoURL,
+      },
     };
+
     console.log(newProduct);
+
     fetch('http://localhost:5000/product', {
       method: 'POST',
       headers: {
@@ -39,8 +44,8 @@ const AddNewProduct = () => {
       },
       body: JSON.stringify(newProduct),
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
         if (data.insertedId) {
           Swal.fire({
@@ -53,11 +58,12 @@ const AddNewProduct = () => {
         }
       });
   };
+
   return (
     <div className="flex justify-center items-center mt-10">
       <form
         onSubmit={handleAddProduct}
-        className="max-w-5xl mx-auto bg-[#F4F3F0] px-4 md:px-8 py-4 "
+        className="max-w-5xl mx-auto bg-[#F4F3F0] px-4 md:px-8 py-4"
       >
         <h6 className="text-blueGray-400 text-3xl mt-3 mb-6 font-bold uppercase text-center">
           Add New Product
@@ -83,16 +89,21 @@ const AddNewProduct = () => {
             <div className="relative w-full mb-3">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="grid-password"
+                htmlFor="category"
               >
                 Category
               </label>
-              <input
-                type="text"
+              <select
                 name="category"
-                placeholder="Enter a category"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              />
+                id="category"
+                className="border-0 px-3 py-3 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              >
+                <option value="Cricket">Cricket</option>
+                <option value="Football">Football</option>
+                <option value="Cycling">Cycling</option>
+                <option value="Baseball">Baseball</option>
+                <option value="Accessories">Accessories</option>
+              </select>
             </div>
           </div>
           <div className="w-full lg:w-6/12 px-4">
