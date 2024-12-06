@@ -3,17 +3,17 @@ import { useState } from "react";
 import ProductCard from "../Component/ProductCard";
 
 const Home = () => {
-  const products = useLoaderData(); // Fetch products from the loader
-  const [filteredProducts, setFilteredProducts] = useState(products); // Default to all products
+  const products = useLoaderData();
+  const [filteredProducts, setFilteredProducts] = useState(products);
   const [categories, setCategories] = useState([]);
 
-  // Extract unique categories from the products
+  // unique categories
   useState(() => {
     const uniqueCategories = [...new Set(products.map((product) => product.category))];
     setCategories(uniqueCategories);
   }, [products]);
 
-  // Handle filtering by category
+  //  filter by category
   const handleFilterByCategory = (category) => {
     if (category === "All") {
       setFilteredProducts(products); // Show all products
@@ -29,15 +29,7 @@ const Home = () => {
       <p className="mb-6">Total Products: {filteredProducts.length}</p>
 
       {/* Category Filter Buttons */}
-      {/* <div className="flex justify-end">
-        <div className="dropdown dropdown-left">
-          <div tabIndex={0} role="button" className="btn m-1">Click</div>
-          <ul tabIndex={0} className=" dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-          </ul>
-        </div>
-      </div> */}
+
       <div className="flex justify-center gap-4 mb-6 flex-wrap">
         <button
           onClick={() => handleFilterByCategory("All")}

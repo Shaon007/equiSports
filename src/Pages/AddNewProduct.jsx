@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
-
 const AddNewProduct = () => {
   const {user}=useContext(AuthContext)
   const handleAddProduct = e => {

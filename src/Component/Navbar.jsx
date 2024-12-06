@@ -19,11 +19,7 @@ const Navbar = () => {
       {/* Logo */}
       <div className="text-lg gap-2 text-white flex justify-center items-center">
         <Link to='/'>
-          <img
-            className="h-12"
-            src="https://i.postimg.cc/FzVNv083/Screenshot-2024-11-21-173756-removebg-preview.png"
-            alt="Logo"
-          />
+          EquiSports
         </Link>
 
       </div>
