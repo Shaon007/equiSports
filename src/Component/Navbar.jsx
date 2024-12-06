@@ -15,10 +15,10 @@ const Navbar = () => {
   };
 
   return (
-    <div className="max-w-[1600px] mx-auto flex justify-between items-center p-2 px-6 bg-[#9333EA] sticky top-0 z-50 shadow-lg">
+    <div className="max-w-[1600px] mx-auto flex justify-between items-center p-2 px-6 bg-transparent sticky top-0 z-50 shadow-lg">
       {/* Logo */}
       <div className="text-lg gap-2 text-white flex justify-center items-center">
-        <Link to='/'>
+        <Link className="font-bold" to='/'>
           EquiSports
         </Link>
 
@@ -243,7 +243,7 @@ const Navbar = () => {
         {user && user?.email ? (
           <button
             onClick={logOut}
-            className="px-4 py-2 border-2 rounded-lg hover:bg-white hover:text-[#9333EA] transition"
+            className="px-4 py-2 border-2 font-semibold rounded-lg hover:bg-white hover:text-black transition"
           >
             Log Out
           </button>
@@ -251,7 +251,7 @@ const Navbar = () => {
             <div className="flex gap-2">
               <Link
                 to="/login"
-                className="px-4 py-2 border-2 rounded-lg hover:bg-white hover:text-[#9333EA] transition"
+                className="px-4 py-2 border-2 rounded-lg text-white hover:bg-white hover:text-[#9333EA] transition"
               >
                 Log In
               </Link>
