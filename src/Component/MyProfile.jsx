@@ -37,7 +37,7 @@ const MyProfile = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center pb-6">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center  py-6">
       <div className="w-full max-w-lg bg-white rounded-lg shadow-lg p-6">
         <h2 className="text-3xl font-bold text-center text-purple-600 mb-6">
           My Profile

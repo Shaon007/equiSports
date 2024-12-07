@@ -60,10 +60,10 @@ const AddNewProduct = () => {
   };
 
   return (
-    <div className="flex justify-center items-center my-10">
+    <div className="flex justify-center items-center my-10 md:w-11/12 lg:w-full mx-auto">
       <form
         onSubmit={handleAddProduct}
-        className="max-w-5xl mx-auto bg-[#F4F3F0] px-4 md:px-8 py-4"
+        className="max-w-5xl mx-auto bg-[#F4F3F0] px-4 md:px-8 py-4 rounded-xl"
       >
         <h6 className="text-gray-800 text-3xl mt-3 mb-6 font-bold uppercase text-center">
           Add New Product

@@ -13,7 +13,7 @@ const AllProduct = () => {
 
   return (
     <div>
-      <div className="my-4 w-2/3 mx-auto">
+      <div className="my-4 w-11/12 lg:w-2/3 mx-auto">
         <div className="flex justify-end">
           <button
             onClick={handleSort}

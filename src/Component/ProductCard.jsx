@@ -4,7 +4,7 @@ const ProductCard = ({ product }) => {
   const { _id, name, rating, details, photo, price } = product;
 
   return (
-    <div className="relative group w-[300px] h-[450px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="relative group  lg:w-[300px] lg:h-[450px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div className="transform transition-transform duration-300 group-hover:scale-105">
           <img
             className="p-4 rounded-t-lg h-[200px] w-full object-contain"

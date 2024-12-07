@@ -6,16 +6,16 @@ import { Link } from "react-router-dom";
 const MyProduct = () => {
   const { user } = useContext(AuthContext);
   const products = useLoaderData();
-
+  console.log(user);
   const filteredProducts = products.filter(
     (product) => product.host?.email === user?.email
   );
 
   return (
-    <div className="bg-gray-100 py-10">
+    <div className=" py-10">
       <div className="container mx-auto px-4">
-        <div className="mb-6">
-          <h1 className="text-4xl font-bold text-gray-900">My Added Products</h1>
+        <div className="mb-12">
+          <h1 className="mb-4 text-4xl font-semibold ">Hello, <span className="text-orange-800">{user?.displayName}</span></h1>
           <p className="text-lg text-gray-700">
             {filteredProducts.length > 0
               ? "Here are the products you added:"

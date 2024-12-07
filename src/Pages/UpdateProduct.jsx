@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const UpdateProduct = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
+
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     fetch(`http://localhost:5000/product/${id}`)
@@ -27,6 +30,7 @@ const UpdateProduct = () => {
       details: form.details.value,
       photo: form.photo.value,
       price: form.price.value,
+      email: form.email.value,
     };
 
     fetch(`http://localhost:5000/product/${id}`, {
@@ -81,6 +85,23 @@ const UpdateProduct = () => {
             </div>
           </div>
 
+          {/* Email */}
+          <div className="w-full lg:w-6/12 px-4">
+            <div className="relative w-full mb-3">
+              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                readOnly
+                defaultValue={user?.email || ''}
+                placeholder="Enter email"
+                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              />
+            </div>
+          </div>
+
           {/* Category */}
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
@@ -91,7 +112,7 @@ const UpdateProduct = () => {
                 type="text"
                 name="category"
                 defaultValue={product.category}
-                placeholder="Enter product category"
+                placeholder="Enter category"
                 className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
@@ -104,10 +125,26 @@ const UpdateProduct = () => {
                 Price
               </label>
               <input
-                type="text"
+                type="number"
                 name="price"
                 defaultValue={product.price}
-                placeholder="Enter product price"
+                placeholder="Enter price"
+                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              />
+            </div>
+          </div>
+
+          {/* Stock */}
+          <div className="w-full lg:w-6/12 px-4">
+            <div className="relative w-full mb-3">
+              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
+                Stock
+              </label>
+              <input
+                type="number"
+                name="stock"
+                defaultValue={product.stock}
+                placeholder="Enter stock"
                 className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
@@ -120,10 +157,10 @@ const UpdateProduct = () => {
                 Rating
               </label>
               <input
-                type="text"
+                type="number"
                 name="rating"
                 defaultValue={product.rating}
-                placeholder="Enter product rating"
+                placeholder="Enter rating"
                 className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
@@ -139,65 +176,33 @@ const UpdateProduct = () => {
                 type="text"
                 name="customization"
                 defaultValue={product.customization}
-                placeholder="Enter customization requirement"
+                placeholder="Enter customization details"
                 className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
 
-          {/* Processing Time */}
+          {/* Processing */}
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
               <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
-                Processing Time
+                Processing
               </label>
               <input
                 type="text"
                 name="processing"
                 defaultValue={product.processing}
-                placeholder="Enter processing time"
+                placeholder="Enter processing details"
                 className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
 
-          {/* Product Photo */}
+          {/* Details */}
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
               <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
-                Product Photo
-              </label>
-              <input
-                type="text"
-                name="photo"
-                defaultValue={product.photo}
-                placeholder="Enter product photo URL"
-                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              />
-            </div>
-          </div>
-
-          {/* Stock Status */}
-          <div className="w-full lg:w-6/12 px-4">
-            <div className="relative w-full mb-3">
-              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
-                Stock Status
-              </label>
-              <input
-                type="text"
-                name="stock"
-                defaultValue={product.stock}
-                placeholder="Enter stock status"
-                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              />
-            </div>
-          </div>
-
-          {/* Description */}
-          <div className="w-full px-4">
-            <div className="relative w-full mb-3">
-              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
-                Description
+                Details
               </label>
               <input
                 type="text"
@@ -209,15 +214,30 @@ const UpdateProduct = () => {
             </div>
           </div>
 
-          {/* Submit Button */}
-          <div className="w-full px-4">
+          {/* Photo URL */}
+          <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
+              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
+                Photo URL
+              </label>
               <input
-                className="border w-full py-2 rounded-md text-[#331A15] font-semibold bg-[#D2B48C]"
-                type="submit"
-                value="Update Product"
+                type="text"
+                name="photo"
+                defaultValue={product.photo}
+                placeholder="Enter photo URL"
+                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
+          </div>
+
+          {/* Submit Button */}
+          <div className="w-full px-4 mt-4">
+            <button
+              type="submit"
+              className="w-full bg-gray-600 text-white py-2 px-4 rounded focus:outline-none hover:bg-gray-700"
+            >
+              Update Product
+            </button>
           </div>
         </div>
       </form>

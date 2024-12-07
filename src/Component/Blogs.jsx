@@ -17,7 +17,7 @@ const Blogs = () => {
         <div className="mb-6 md:mb-0 p-4 lg:p-0 w-full md:w-2/3 relative rounded-lg shadow-lg bg-white">
           <img
             className="rounded-md object-cover w-full h-64"
-            src="https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+            src="https://i.pinimg.com/736x/14/f8/19/14f819a148fbc3a2bf75c6773c012221.jpg"
             alt=""
           />
           <div className="w-11/12 mx-auto ">
@@ -41,8 +41,8 @@ const Blogs = () => {
           {/* Post 1 */}
           <div className="rounded w-full flex flex-col md:flex-row mb-8 shadow-md">
             <img
-              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
-              className="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0 pl-4 py-4"
+              src="https://i.pinimg.com/736x/4c/f1/ac/4cf1ac099da48e8cae4f3c8b10e75f19.jpg"
+              className="block md:hidden object-cover lg:block rounded-md h-64 md:h-32 m-4 md:m-0 pl-4 py-4"
               alt=""
             />
             <div className="bg-white rounded px-4  flex-1">
@@ -57,7 +57,7 @@ const Blogs = () => {
           {/* Post 2 */}
           <div className="rounded w-full flex flex-col md:flex-row mb-8 shadow-md">
             <img
-              src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+              src="https://i.pinimg.com/736x/c6/d6/8f/c6d68f39f3a722cf7be10a3df04d61c8.jpg"
               className="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0 pl-4 py-4"
               alt=""
             />
@@ -73,7 +73,7 @@ const Blogs = () => {
           {/* Post 3 */}
           <div className="rounded w-full flex flex-col md:flex-row mb-8 shadow-md">
             <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+              src="https://i.pinimg.com/736x/db/d7/0a/dbd70aaf2a672a592d698c8f3877f3c5.jpg"
               className="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0 pl-4 py-4"
               alt=""
             />

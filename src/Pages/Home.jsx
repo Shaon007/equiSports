@@ -17,7 +17,6 @@ const Home = () => {
     setCategories(uniqueCategories);
   }, [products]);
 
-  // filter by category
   const handleFilterByCategory = (category) => {
     if (category === "All") {
       setFilteredProducts(products);
@@ -43,8 +42,11 @@ const Home = () => {
       </div>
 
       <div className="w-11/12 mx-auto ">
+        <div className="text-3xl text-center mt-12 font-semibold">
+          <h2>Explore Our Products</h2>
+        </div>
         {/* Category Filter Buttons */}
-        <div className="lg:w-9/12 mx-auto justify-center gap-8 my-24 flex-wrap grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 ">
+        <div className="lg:w-9/12 mx-auto justify-center gap-8 my-16 flex-wrap grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 ">
           <button
             onClick={() => handleFilterByCategory("All")}
             className="btn btn-active p-2 h-36 w-36 rounded-full "
@@ -73,12 +75,14 @@ const Home = () => {
 
         {/* Product Grid */}
         <div className=" lg:w-11/12 mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+
           {filteredProducts.map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}
         </div>
       </div>
-      <div>
+      <div className="my-20">
+        <h2 className="text-3xl text-center mt-12 font-semibold">Some Satisfied Customers</h2>
         <Review></Review>
       </div>
       <div>

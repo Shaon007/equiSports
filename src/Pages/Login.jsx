@@ -53,10 +53,10 @@ const Login = () => {
 
   const handleForgetPass = () => {
     if (!isForgetPassActive) {
-      toast.error('Please attempt to log in first.');
+      toast.error('Forget Pass disabled ');
       return;
     }
-    navigate('/forgot', { state: forgetEmail });
+    // navigate('/forgot', { state: forgetEmail });
   };
 
   return (

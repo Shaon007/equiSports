@@ -33,7 +33,7 @@ const TopRated = () => {
     <div className="my-10 mx-auto px-4 border p-12 w-11/12">
       <div className="grid grid-cols-4 gap-3">
         {/* Left section with banner title (2/5) */}
-        <div className="col-span-2 flex flex-col justify-center">
+        <div className="col-span-2 flex flex-col justify-center pl-12">
           <h2 className="text-3xl font-bold mb-4">Top Rated Products </h2>
           <p className="text-lg text-gray-600">Explore the best products based on user ratings.</p>
         </div>
