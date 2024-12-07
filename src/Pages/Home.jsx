@@ -34,14 +34,14 @@ const Home = () => {
   };
 
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto ">
       <div className="">
         <AutoSlider />
       </div>
 
-      <div className="w-11/12 mx-auto">
+      <div className="w-11/12 mx-auto ">
         {/* Category Filter Buttons */}
-        <div className="flex justify-center gap-4 my-24 flex-wrap">
+        <div className="lg:w-9/12 mx-auto justify-center gap-8 my-24 flex-wrap grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 ">
           <button
             onClick={() => handleFilterByCategory("All")}
             className="btn btn-active p-2 h-36 w-36 rounded-full "
@@ -69,7 +69,7 @@ const Home = () => {
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className=" lg:w-11/12 mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {filteredProducts.map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}
