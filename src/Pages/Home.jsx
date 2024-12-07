@@ -2,6 +2,9 @@ import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import ProductCard from "../Component/ProductCard";
 import AutoSlider from "../Component/AutoSlider";
+import TopRated from "../Component/TopRated";
+import Review from "../Component/Review";
+import Blogs from "../Component/Blogs";
 
 const Home = () => {
   const products = useLoaderData();
@@ -41,12 +44,12 @@ const Home = () => {
 
       <div className="w-11/12 mx-auto ">
         {/* Category Filter Buttons */}
-        <div className="lg:w-9/12 mx-auto justify-center gap-8 my-24 flex-wrap grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 ">
+        <div className="lg:w-9/12 mx-auto justify-center gap-8 my-24 flex-wrap grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 ">
           <button
             onClick={() => handleFilterByCategory("All")}
             className="btn btn-active p-2 h-36 w-36 rounded-full "
           >
-            <img className="rounded-full w-32 h-32 transform transition-all duration-300 hover:scale-110" src="https://i.pinimg.com/736x/7a/d3/d5/7ad3d59842654cd81ecc3c5507b4746b.jpg" alt="All" />
+            <img className="object-cover rounded-full w-32 h-32 transform transition-all duration-300 hover:scale-110" src="https://i.pinimg.com/736x/7a/d3/d5/7ad3d59842654cd81ecc3c5507b4746b.jpg" alt="All" />
             <p className="pt-2">All</p>
           </button>
 
@@ -74,6 +77,15 @@ const Home = () => {
             <ProductCard key={product._id} product={product} />
           ))}
         </div>
+      </div>
+      <div>
+        <Review></Review>
+      </div>
+      <div>
+        <TopRated></TopRated>
+      </div>
+      <div>
+        <Blogs></Blogs>
       </div>
     </div>
   );

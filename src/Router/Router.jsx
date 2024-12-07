@@ -12,6 +12,7 @@ import Register from "../Pages/Register";
 import ForgotPass from "../Pages/ForgotPass";
 import PrivateRoute from "./PrivateRoute";
 import Contact from "../Pages/Contact";
+import MyProfile from "../Component/MyProfile";
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,14 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/myProfile",
+        element: (
+          <PrivateRoute>
+            <MyProfile />
+          </PrivateRoute>
+        ),
       },
 
     ],

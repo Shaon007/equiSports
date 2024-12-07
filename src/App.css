@@ -1,42 +1,34 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Default Theme: Warm */
+:root {
+  --background-color: #ffeb3b; /* Warm yellow */
+  --text-color: #212121; /* Dark gray */
+  --primary-color: #ff5722; /* Warm orange */
+  --secondary-color: #8e24aa; /* Purple */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Cool Theme */
+[data-theme='cool'] {
+  --background-color: #e0f7fa; /* Cool cyan */
+  --text-color: #00796b; /* Dark teal */
+  --primary-color: #0288d1; /* Blue */
+  --secondary-color: #80deea; /* Light cyan */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Apply the theme colors */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+button {
+  background-color: var(--primary-color);
+  color: white;
 }
 
-.card {
-  padding: 2em;
+h1, h2, h3 {
+  color: var(--primary-color);
 }
 
-.read-the-docs {
-  color: #888;
+a {
+  color: var(--secondary-color);
 }

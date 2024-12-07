@@ -60,19 +60,19 @@ const AddNewProduct = () => {
   };
 
   return (
-    <div className="flex justify-center items-center mt-10">
+    <div className="flex justify-center items-center my-10">
       <form
         onSubmit={handleAddProduct}
         className="max-w-5xl mx-auto bg-[#F4F3F0] px-4 md:px-8 py-4"
       >
-        <h6 className="text-blueGray-400 text-3xl mt-3 mb-6 font-bold uppercase text-center">
+        <h6 className="text-gray-800 text-3xl mt-3 mb-6 font-bold uppercase text-center">
           Add New Product
         </h6>
         <div className="flex flex-wrap">
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
               <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                className="block uppercase text-gray-800 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
                 Name
@@ -81,14 +81,14 @@ const AddNewProduct = () => {
                 type="text"
                 name="name"
                 placeholder="Enter a product name"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
               <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                className="block uppercase text-gray-800 text-xs font-bold mb-2"
                 htmlFor="category"
               >
                 Category
@@ -96,7 +96,7 @@ const AddNewProduct = () => {
               <select
                 name="category"
                 id="category"
-                className="border-0 px-3 py-3 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               >
                 <option value="Cricket">Cricket</option>
                 <option value="Football">Football</option>
@@ -109,7 +109,7 @@ const AddNewProduct = () => {
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
               <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                className="block uppercase text-gray-800 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
                 Price
@@ -118,14 +118,14 @@ const AddNewProduct = () => {
                 type="text"
                 name="price"
                 placeholder="Enter Price"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
               <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                className="block uppercase text-gray-800 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
                 Rating
@@ -134,14 +134,14 @@ const AddNewProduct = () => {
                 type="text"
                 name="rating"
                 placeholder="Enter Product Rating"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
               <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                className="block uppercase text-gray-800 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
                 Customization
@@ -150,14 +150,14 @@ const AddNewProduct = () => {
                 type="text"
                 name="customization"
                 placeholder="Customization Requirement"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
               <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                className="block uppercase text-gray-800 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
                 Processing Time
@@ -166,14 +166,14 @@ const AddNewProduct = () => {
                 type="text"
                 name="processing"
                 placeholder="Enter product process time"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
               <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                className="block uppercase text-gray-800 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
                 Product Photo
@@ -182,14 +182,14 @@ const AddNewProduct = () => {
                 type="text"
                 name="photo"
                 placeholder="Enter Product Photo"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
               <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                className="block uppercase text-gray-800 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
                 Stock Status
@@ -198,14 +198,14 @@ const AddNewProduct = () => {
                 type="text"
                 name="stock"
                 placeholder="Enter Available Product"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
           <div className="w-full px-4">
             <div className="relative w-full mb-3">
               <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                className="block uppercase text-gray-800 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
                 Description
@@ -214,14 +214,14 @@ const AddNewProduct = () => {
                 type="text"
                 name="details"
                 placeholder="Enter Product Details"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
           <div className="w-full px-4">
             <div className="relative w-full mb-3">
               <input
-                className="border w-full py-2 rounded-md text-[#331A15] font-semibold bg-[#D2B48C] "
+                className="border w-full py-2 rounded-md text-white font-semibold bg-gray-700 "
                 type="submit"
                 value="Add Product"
               />

@@ -56,19 +56,19 @@ const UpdateProduct = () => {
   }
 
   return (
-    <div className="flex justify-center items-center mt-10">
+    <div className="flex justify-center items-center my-10">
       <form
         onSubmit={handleUpdateProduct}
         className="max-w-5xl mx-auto bg-[#F4F3F0] px-4 md:px-8 py-4"
       >
-        <h6 className="text-blueGray-400 text-3xl mt-3 mb-6 font-bold uppercase text-center">
+        <h6 className="text-gray-800 text-3xl mt-3 mb-6 font-bold uppercase text-center">
           Update Product
         </h6>
         <div className="flex flex-wrap">
           {/* Name */}
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
-              <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2">
+              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
                 Name
               </label>
               <input
@@ -76,7 +76,7 @@ const UpdateProduct = () => {
                 name="name"
                 defaultValue={product.name}
                 placeholder="Enter product name"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
@@ -84,7 +84,7 @@ const UpdateProduct = () => {
           {/* Category */}
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
-              <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2">
+              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
                 Category
               </label>
               <input
@@ -92,7 +92,7 @@ const UpdateProduct = () => {
                 name="category"
                 defaultValue={product.category}
                 placeholder="Enter product category"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
@@ -100,7 +100,7 @@ const UpdateProduct = () => {
           {/* Price */}
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
-              <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2">
+              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
                 Price
               </label>
               <input
@@ -108,7 +108,7 @@ const UpdateProduct = () => {
                 name="price"
                 defaultValue={product.price}
                 placeholder="Enter product price"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
@@ -116,7 +116,7 @@ const UpdateProduct = () => {
           {/* Rating */}
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
-              <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2">
+              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
                 Rating
               </label>
               <input
@@ -124,7 +124,7 @@ const UpdateProduct = () => {
                 name="rating"
                 defaultValue={product.rating}
                 placeholder="Enter product rating"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
@@ -132,7 +132,7 @@ const UpdateProduct = () => {
           {/* Customization */}
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
-              <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2">
+              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
                 Customization
               </label>
               <input
@@ -140,7 +140,7 @@ const UpdateProduct = () => {
                 name="customization"
                 defaultValue={product.customization}
                 placeholder="Enter customization requirement"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
@@ -148,7 +148,7 @@ const UpdateProduct = () => {
           {/* Processing Time */}
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
-              <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2">
+              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
                 Processing Time
               </label>
               <input
@@ -156,7 +156,7 @@ const UpdateProduct = () => {
                 name="processing"
                 defaultValue={product.processing}
                 placeholder="Enter processing time"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
@@ -164,7 +164,7 @@ const UpdateProduct = () => {
           {/* Product Photo */}
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
-              <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2">
+              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
                 Product Photo
               </label>
               <input
@@ -172,7 +172,7 @@ const UpdateProduct = () => {
                 name="photo"
                 defaultValue={product.photo}
                 placeholder="Enter product photo URL"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
@@ -180,7 +180,7 @@ const UpdateProduct = () => {
           {/* Stock Status */}
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
-              <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2">
+              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
                 Stock Status
               </label>
               <input
@@ -188,7 +188,7 @@ const UpdateProduct = () => {
                 name="stock"
                 defaultValue={product.stock}
                 placeholder="Enter stock status"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
@@ -196,7 +196,7 @@ const UpdateProduct = () => {
           {/* Description */}
           <div className="w-full px-4">
             <div className="relative w-full mb-3">
-              <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2">
+              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
                 Description
               </label>
               <input
@@ -204,7 +204,7 @@ const UpdateProduct = () => {
                 name="details"
                 defaultValue={product.details}
                 placeholder="Enter product details"
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>

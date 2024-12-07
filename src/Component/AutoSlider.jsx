@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 const AutoSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Images array
   const images = [
     "https://www.vivacamera.nl/wp-content/uploads/sportfotografie-gids.jpg",
     "https://www.arabianbusiness.com/cloud/2021/09/14/WDiHUscY-footballsoccer-1200x800.jpg",
@@ -35,7 +34,7 @@ const AutoSlider = () => {
   return (
     <div id="default-carousel" className="relative w-full" data-carousel="slide">
       {/* Carousel wrapper */}
-      <div className="relative mt-[-70px] h-56 overflow-hidden rounded-lg md:h-[650px]">
+      <div className="relative  h-56 overflow-hidden rounded-lg md:h-[650px]">
         {images.map((image, index) => (
           <div
             key={index}

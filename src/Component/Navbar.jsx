@@ -15,11 +15,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="max-w-[1600px] mx-auto flex justify-between items-center p-2 px-6 bg-transparent sticky top-0 z-50 shadow-lg">
+    <div className="max-w-[1600px] mx-auto flex justify-between items-center p-2 px-6 bg-gray-400 sticky top-0 z-50 shadow-lg">
       {/* Logo */}
-      <div className="text-lg gap-2 text-white flex justify-center items-center">
+      <div className="text-lg gap-2  flex justify-center items-center">
         <Link className="font-bold" to='/'>
-          EquiSports
+          Equi<span className="text-xl italic text-orange-800">Sports</span>
         </Link>
 
       </div>
@@ -81,7 +81,7 @@ const Navbar = () => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="w-8 h-8 text-white"
+            className="w-8 h-8 "
           >
             <path
               strokeLinecap="round"
@@ -103,7 +103,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            `text-white ${isActive ? "border-b-2 border-white pb-1" : ""}`
+            ` ${isActive ? "border-b-2 border-white pb-1" : ""}`
           }
         >
           Home
@@ -111,7 +111,7 @@ const Navbar = () => {
         <NavLink
           to="/allProduct"
           className={({ isActive }) =>
-            `text-white ${isActive ? "border-b-2 border-white pb-1" : ""}`
+            ` ${isActive ? "border-b-2 border-white pb-1" : ""}`
           }
         >
           All Equipment
@@ -119,7 +119,7 @@ const Navbar = () => {
         <NavLink
           to="/addNewProduct"
           className={({ isActive }) =>
-            `text-white ${isActive ? "border-b-2 border-white pb-1" : ""}`
+            ` ${isActive ? "border-b-2 border-white pb-1" : ""}`
           }
         >
           Add New
@@ -127,7 +127,7 @@ const Navbar = () => {
         <NavLink
           to="/myProduct"
           className={({ isActive }) =>
-            `text-white ${isActive ? "border-b-2 border-white pb-1" : ""}`
+            ` ${isActive ? "border-b-2 border-white pb-1" : ""}`
           }
         >
           My Equipment
@@ -153,7 +153,7 @@ const Navbar = () => {
           {user && user?.email ? (
             <button
               onClick={logOut}
-              className="px-4 py-2 border-2 text-white rounded-lg hover:bg-white hover:text-[#9333EA] transition"
+              className="px-4 py-2 border-2  rounded-lg hover:bg-white hover:text-[#9333EA] transition"
             >
               Log Out
             </button>
@@ -214,7 +214,7 @@ const Navbar = () => {
           onMouseLeave={() => setIsHovered(false)}
         >
 
-          <Link to="/" className="w-10 h-10">
+          <Link to="/myProfile" className="w-10 h-10">
             {user && user?.photoURL ? (
               <img
                 className="rounded-full object-cover w-10 h-10 border-2 border-white"
@@ -233,7 +233,7 @@ const Navbar = () => {
 
           {/* Tooltip for Username */}
           {isHovered && user?.displayName && (
-            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 rounded bg-gray-900 text-white text-sm shadow-lg">
+            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 rounded bg-gray-400  text-sm w-36 shadow-lg">
               {user.displayName}
             </div>
           )}
@@ -251,7 +251,7 @@ const Navbar = () => {
             <div className="flex gap-2">
               <Link
                 to="/login"
-                className="px-4 py-2 border-2 rounded-lg text-white hover:bg-white hover:text-[#9333EA] transition"
+                className="px-4 py-2 border-2 rounded-lg  hover:bg-white hover:text-[#9333EA] transition"
               >
                 Log In
               </Link>
