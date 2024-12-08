@@ -39,8 +39,8 @@ const MyProfile = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center  py-6">
       <div className="w-full max-w-lg bg-white rounded-lg shadow-lg p-6">
-        <h2 className="text-3xl font-bold text-center text-purple-600 mb-6">
-          My Profile
+        <h2 className="text-3xl font-bold text-center text-gray-500 mb-6">
+          Welcome, {user?.displayName}
         </h2>
 
         <div className="flex flex-col items-center mb-8">
@@ -66,7 +66,7 @@ const MyProfile = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Enter your name"
-              className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
             />
           </div>
 
@@ -80,7 +80,7 @@ const MyProfile = () => {
               value={photoURL}
               onChange={(e) => setPhotoURL(e.target.value)}
               placeholder="Enter photo URL"
-              className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
             />
           </div>
 
@@ -91,7 +91,7 @@ const MyProfile = () => {
 
           <button
             type="submit"
-            className="w-full p-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 shadow-md"
+            className="w-full p-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 shadow-md"
           >
             Update Profile
           </button>

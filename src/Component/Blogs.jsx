@@ -16,16 +16,16 @@ const Blogs = () => {
         {/* Main post */}
         <div className="mb-6 md:mb-0 p-4 lg:p-0 w-full md:w-2/3 relative rounded-lg shadow-lg bg-white">
           <img
-            className="rounded-md object-cover w-full h-64"
+            className="rounded-md object-cover w-full h-52 lg:h-64"
             src="https://i.pinimg.com/736x/14/f8/19/14f819a148fbc3a2bf75c6773c012221.jpg"
             alt=""
           />
-          <div className="w-11/12 mx-auto ">
+          <div className="lg:w-11/12 mx-auto ">
             <span className="text-green-700 text-sm mt-4 block">Athletics</span>
             <h1 className="text-gray-800 text-3xl font-bold mt-2 mb-2 leading-tight ">
               Injury Prevention in Athletics
             </h1>
-            <p className="text-gray-600 mb-4">
+            <p className="md:text-sm lg:text-base text-gray-600 mb-2 lg:mb-4">
               Achieving your athletic goals requires consistent effort, dedication, and discipline. An often overlooked yet critical aspect of training is injury prevention. Injuries can set you back, disrupt your progress, and demotivate you. To keep moving forward without setbacks, here are some essential tips and...
             </p>
             <button onClick={handleModal}
@@ -42,7 +42,7 @@ const Blogs = () => {
           <div className="rounded w-full flex flex-col md:flex-row mb-8 shadow-md">
             <img
               src="https://i.pinimg.com/736x/4c/f1/ac/4cf1ac099da48e8cae4f3c8b10e75f19.jpg"
-              className="block md:hidden object-cover lg:block rounded-md h-64 md:h-32 m-4 md:m-0 pl-4 py-4"
+              className="block md:hidden object-cover lg:block rounded-md h-64 md:h-32 m-4 md:m-0 md:pl-4 py-4"
               alt=""
             />
             <div className="bg-white rounded px-4  flex-1">
@@ -58,7 +58,7 @@ const Blogs = () => {
           <div className="rounded w-full flex flex-col md:flex-row mb-8 shadow-md">
             <img
               src="https://i.pinimg.com/736x/c6/d6/8f/c6d68f39f3a722cf7be10a3df04d61c8.jpg"
-              className="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0 pl-4 py-4"
+              className="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0 md:pl-4 py-4"
               alt=""
             />
             <div className="bg-white rounded px-4  flex-1">
@@ -74,7 +74,7 @@ const Blogs = () => {
           <div className="rounded w-full flex flex-col md:flex-row mb-8 shadow-md">
             <img
               src="https://i.pinimg.com/736x/db/d7/0a/dbd70aaf2a672a592d698c8f3877f3c5.jpg"
-              className="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0 pl-4 py-4"
+              className="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0 md:pl-4 py-4"
               alt=""
             />
             <div className="bg-white rounded px-4  flex-1">

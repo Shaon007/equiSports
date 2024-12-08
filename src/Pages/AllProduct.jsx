@@ -1,5 +1,6 @@
 import { useLoaderData, Link } from "react-router-dom";
 import { useState } from "react";
+import { FaEye } from "react-icons/fa6";
 
 const AllProduct = () => {
   const products = useLoaderData();
@@ -53,7 +54,7 @@ const AllProduct = () => {
                       className="text-blue-600 hover:text-blue-800"
                     >
                       <button className="px-4 py-2 bg-blue-500 text-white rounded-lg">
-                        View More
+                        <FaEye></FaEye>
                       </button>
                     </Link>
                   </td>

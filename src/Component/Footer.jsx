@@ -25,11 +25,9 @@ const Footer = () => {
     <div>
       <footer className="max-w-[1600px] mx-auto flex justify-center px-4 text-gray-800 bg-[#1F2937]">
         <div className="container px-6 py-6">
-          <div className="flex justify-center text-white">
-            <h2 className="font-semibold text-2xl">
-              Equi<span className="Italic">Sports</span>
-            </h2>
-          </div>
+          <Link to='/' className="flex justify-center text-white">
+            <img className="w-36 lg:w-44" src="https://i.postimg.cc/Rhn1dWfV/Screenshot-2024-12-08-210839-removebg-preview.png" alt="" />
+          </Link>
 
           <div className="flex flex-col justify-center mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
             <input

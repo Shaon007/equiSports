@@ -34,7 +34,7 @@ const AutoSlider = () => {
   return (
     <div id="default-carousel" className="relative w-full" data-carousel="slide">
       {/* Carousel wrapper */}
-      <div className="relative  h-56 overflow-hidden rounded-lg md:h-[440px]">
+      <div className="relative  h-56 overflow-hidden rounded-lg md:h-[440px] lg:h-[660px]">
         {images.map((image, index) => (
           <div
             key={index}
@@ -49,9 +49,9 @@ const AutoSlider = () => {
             />
 
             {/* Slogan  */}
-            <div className="absolute  w-full h-full bg-black/50 flex flex-col justify-center items-start px-4 text-white">
-              <span className="pl-10 pt-20 text-5xl w-[460px] font-bold">{sliderContent[index].slogan}</span>
-              <p className="pl-10 w-[400px] mt-2 text-xl">{sliderContent[index].subheading}</p>
+            <div className="absolute  w-full h-full bg-black/50 flex flex-col justify-center items-start px-4 text-gray-400 md:text-gray-200">
+              <span className="pl-10 pt-20 text-xl md:text-3xl lg:text-5xl w-[460px] font-bold">{sliderContent[index].slogan}</span>
+              <p className="pl-10 w-[400px] mt-2 text-base md:text-lg lg:text-xl">{sliderContent[index].subheading}</p>
             </div>
           </div>
         ))}

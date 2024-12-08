@@ -19,12 +19,12 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     errorElement: <Error />,
-    loader: () => fetch('http://localhost:5000/product'),
+    loader: () => fetch('https://equi-sports-server-psi.vercel.app/product'),
     children: [
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch('http://localhost:5000/product'),
+        loader: () => fetch('https://equi-sports-server-psi.vercel.app/product'),
       },
       {
         path: "/addNewProduct",
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       {
         path: "/updateProduct/:id",
         element: <UpdateProduct />,
-        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
+        loader: ({ params }) => fetch(`https://equi-sports-server-psi.vercel.app/product/${params.id}`)
       },
       {
         path: "/myProduct",
@@ -46,12 +46,12 @@ const router = createBrowserRouter([
             <MyProduct />
           </PrivateRoute>
         ),
-        loader: () => fetch('http://localhost:5000/product'),
+        loader: () => fetch('https://equi-sports-server-psi.vercel.app/product'),
       },
       {
         path: "/allProduct",
         element: <AllProduct />,
-        loader: () => fetch('http://localhost:5000/product')
+        loader: () => fetch('https://equi-sports-server-psi.vercel.app/product')
       },
       {
         path: "/product/:id",

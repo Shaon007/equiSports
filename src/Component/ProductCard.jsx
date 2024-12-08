@@ -3,20 +3,23 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
   const { _id, name, rating, details, photo, price } = product;
 
+  // Capitalize the first letter of the name and keep the rest as is
+  const capitalizedProductName = name.charAt(0).toUpperCase() + name.slice(1);
+
   return (
-    <div className="relative group  lg:w-[300px] lg:h-[450px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="relative group lg:w-[300px] lg:h-[424px] bg-[#1F2937] border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div className="transform transition-transform duration-300 group-hover:scale-105">
-          <img
-            className="p-4 rounded-t-lg h-[200px] w-full object-contain"
-            src={photo}
-            alt="product"
-          />
+        <img
+          className="p-4 rounded-xl h-[200px] w-full object-cover"
+          src={photo}
+          alt="product"
+        />
 
         <div className="px-5 pb-5">
-          <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white h-[64px] overflow-hidden">
-            {name}
+          <h5 className="text-xl font-semibold tracking-tight text-gray-200 dark:text-white h-[36px] overflow-hidden">
+            {capitalizedProductName}
           </h5>
-          <p className="text-gray-600 dark:text-gray-400 h-[48px] overflow-hidden text-sm">
+          <p className="text-gray-400 dark:text-gray-400 h-[62px] overflow-hidden text-sm">
             {details}
           </p>
           <div className="flex items-center mt-2.5 mb-5">
@@ -24,10 +27,7 @@ const ProductCard = ({ product }) => {
               {[...Array(5)].map((_, index) => (
                 <svg
                   key={index}
-                  className={`w-4 h-4 ${index < rating
-                      ? "text-yellow-300"
-                      : "text-gray-200 dark:text-gray-600"
-                    }`}
+                  className={`w-4 h-4 ${index < rating ? "text-yellow-300" : "text-gray-200 dark:text-gray-600"}`}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
                   viewBox="0 0 22 20"
@@ -40,8 +40,8 @@ const ProductCard = ({ product }) => {
               {rating}
             </span>
           </div>
-          <div className="flex items-center justify-between">
-            <span className="text-3xl font-bold text-gray-900 dark:text-white">
+          <div className="flex md:flex-col lg:flex-row lg:items-center justify-between">
+            <span className="text-3xl mb-2 font-bold text-gray-300 dark:text-white">
               ${price}
             </span>
             <Link

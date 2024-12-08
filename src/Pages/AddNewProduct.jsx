@@ -37,7 +37,7 @@ const AddNewProduct = () => {
 
     console.log(newProduct);
 
-    fetch('http://localhost:5000/product', {
+    fetch('https://equi-sports-server-psi.vercel.app/product', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

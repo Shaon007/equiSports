@@ -15,13 +15,12 @@ const Navbar = () => {
   };
 
   return (
-    <div className="max-w-[1600px] mx-auto flex justify-between items-center p-2 px-6 bg-gray-400 sticky top-0 z-50 shadow-lg">
+    <div className="max-w-[1600px] mx-auto flex justify-between items-center p-2 px-6 bg-stone-200 sticky top-0 z-50 shadow-lg">
       {/* Logo */}
-      <div className="text-lg gap-2  flex justify-center items-center">
-        <Link className="font-bold" to='/'>
-          Equi<span className="text-xl italic text-orange-800">Sports</span>
+      <div className="text-lg gap-2 flex justify-center items-center">
+        <Link className="font-bold text-stone-700" to='/'>
+          <img className="md:w-36 w-28" src="https://i.postimg.cc/Rhn1dWfV/Screenshot-2024-12-08-210839-removebg-preview.png" alt="" />
         </Link>
-
       </div>
 
       {/* Hamburger */}
@@ -96,14 +95,14 @@ const Navbar = () => {
       {/* Dropdown Menu */}
       <div
         className={`lg:flex gap-5 ml-5 text-lg ${isMenuOpen
-          ? "flex flex-col absolute top-full left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-auto bg-[#9333EA] p-4 space-y-3 z-50"
+          ? "flex flex-col absolute top-full left-[70%] md:left-[80%] transform -translate-x-1/2 w-[50%] md:w-[30%] lg:w-auto bg-zinc-300 p-4 space-y-1 z-50"
           : "hidden"
           } lg:block`}
       >
         <NavLink
           to="/"
           className={({ isActive }) =>
-            ` ${isActive ? "border-b-2 border-white pb-1" : ""}`
+            `text-stone-700 ${isActive ? "text-stone-800 border-b-2 border-gray-600 pb-1" : ""}`
           }
         >
           Home
@@ -111,7 +110,7 @@ const Navbar = () => {
         <NavLink
           to="/allProduct"
           className={({ isActive }) =>
-            ` ${isActive ? "border-b-2 border-white pb-1" : ""}`
+            `text-stone-700 ${isActive ? "border-b-2 border-gray-600 pb-1" : ""}`
           }
         >
           All Equipment
@@ -119,7 +118,7 @@ const Navbar = () => {
         <NavLink
           to="/addNewProduct"
           className={({ isActive }) =>
-            ` ${isActive ? "border-b-2 border-white pb-1" : ""}`
+            `text-stone-700 ${isActive ? "border-b-2 border-gray-600 pb-1" : ""}`
           }
         >
           Add New
@@ -127,7 +126,7 @@ const Navbar = () => {
         <NavLink
           to="/myProduct"
           className={({ isActive }) =>
-            ` ${isActive ? "border-b-2 border-white pb-1" : ""}`
+            `text-stone-700 ${isActive ? "border-b-2 border-gray-600 pb-1" : ""}`
           }
         >
           My Equipment
@@ -135,49 +134,33 @@ const Navbar = () => {
 
         <div className="flex flex-col lg:hidden items-center gap-4 mt-4">
 
-          <Link to="/">
-            {user?.photoURL ? (
-              <img
-                className="rounded-full object-cover w-12 h-12 border-2 border-white"
-                src={user.photoURL}
-                alt="User"
-              />
-            ) : (
-              <img
-                className="rounded-full object-cover w-12 h-12 border-2 border-white"
-                src="https://i.pinimg.com/736x/07/f3/88/07f388d9df8a9eff8b048d7ce60888db.jpg"
-                alt="Default User"
-              />
-            )}
-          </Link>
           {user && user?.email ? (
             <button
               onClick={logOut}
-              className="px-4 py-2 border-2  rounded-lg hover:bg-white hover:text-[#9333EA] transition"
+              className="px-4 py-2  border-2 rounded-lg text-stone-700 hover:bg-white hover:text-[#9333EA] transition"
             >
               Log Out
             </button>
           ) : (
-              <div className="flex gap-2">
-                <Link
-                  to="/login"
-                  className="px-4 py-2 border-2 rounded-lg hover:bg-white hover:text-[#9333EA] transition"
-                >
-                  Log In
-                </Link>
-                <Link
-                  to="/register"
-                  className="px-4 py-2 border-2 rounded-lg hover:bg-white hover:text-[#9333EA] transition"
-                >
-                  Sign Up
-                </Link>
-              </div>
-
+            <div className="flex gap-2">
+              <Link
+                to="/login"
+                className="px-4 py-2  border-2 rounded-lg text-stone-700 hover:bg-white hover:text-[#9333EA] transition"
+              >
+                Log In
+              </Link>
+              <Link
+                to="/register"
+                className="px-4 py-2 border-2 rounded-lg text-stone-700 hover:bg-white hover:text-[#9333EA] transition"
+              >
+                Sign Up
+              </Link>
+            </div>
           )}
         </div>
       </div>
 
-      {/* User Section (visible on larger screens) */}
+      {/*  larger screens */}
       <div className="hidden lg:flex items-center gap-3 relative">
         <label className="flex cursor-pointer gap-2">
           <svg
@@ -213,7 +196,6 @@ const Navbar = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-
           <Link to="/myProfile" className="w-10 h-10">
             {user && user?.photoURL ? (
               <img
@@ -230,10 +212,9 @@ const Navbar = () => {
             )}
           </Link>
 
-
           {/* Tooltip for Username */}
           {isHovered && user?.displayName && (
-            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 rounded bg-gray-400  text-sm w-36 shadow-lg">
+            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 rounded bg-gray-400 text-sm w-36 shadow-lg">
               {user.displayName}
             </div>
           )}
@@ -243,26 +224,25 @@ const Navbar = () => {
         {user && user?.email ? (
           <button
             onClick={logOut}
-            className="px-4 py-2 border-2 font-semibold rounded-lg hover:bg-white hover:text-black transition"
+            className="px-4 py-2  border-stone-400 border-2 font-semibold rounded-lg text-stone-700 hover:bg-white hover:text-[#9333EA] transition"
           >
             Log Out
           </button>
         ) : (
-            <div className="flex gap-2">
-              <Link
-                to="/login"
-                className="px-4 py-2 border-2 rounded-lg  hover:bg-white hover:text-[#9333EA] transition"
-              >
-                Log In
-              </Link>
-              <Link
-                to="/register"
-                className="px-4 py-2 border-2 rounded-lg hover:bg-white hover:text-[#9333EA] transition"
-              >
-                Sign Up
-              </Link>
+          <div className="flex gap-2">
+            <Link
+              to="/login"
+              className="px-4 py-2 border-stone-400 border-2 font-semibold rounded-lg text-stone-700 hover:bg-white hover:text-[#9333EA] transition"
+            >
+              Log In
+            </Link>
+            <Link
+              to="/register"
+              className="px-4 py-2 border-stone-400 border-2 font-semibold rounded-lg text-stone-700 hover:bg-white hover:text-[#9333EA] transition"
+            >
+              Sign Up
+            </Link>
           </div>
-
         )}
       </div>
     </div>

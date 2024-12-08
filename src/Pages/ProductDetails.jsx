@@ -1,14 +1,28 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { FaEdit, FaRegEdit, FaShoppingCart } from "react-icons/fa";
+import { FaGear, FaTrash } from "react-icons/fa6";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const navigate = useNavigate();
 
+  const handleBuy = () => {
+    Swal.fire({
+      title: "Buying Feature Not Available",
+      // text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "OK",
+    })
+  }
+
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://equi-sports-server-psi.vercel.app/product/${id}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch product details.");
@@ -23,6 +37,9 @@ const ProductDetails = () => {
     return <div className="text-center text-xl font-bold mt-20">Loading...</div>;
   }
 
+  // Capitalize the first letter of the product name
+  const capitalizedProductName = product.name.charAt(0).toUpperCase() + product.name.slice(1);
+
   const handleDelete = (_id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -34,7 +51,7 @@ const ProductDetails = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/product/${_id}`, {
+        fetch(`https://equi-sports-server-psi.vercel.app/product/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -60,7 +77,7 @@ const ProductDetails = () => {
         <div className="flex flex-col flex-shrink-0 justify-center items-center lg:w-1/3">
           <img
             src={product.photo}
-            alt={product.name}
+            alt={capitalizedProductName}
             className="rounded-lg w-full object-contain"
           />
           <div className="flex flex-col lg:flex-row gap-4 my-4">
@@ -73,7 +90,7 @@ const ProductDetails = () => {
 
         {/* Product Information */}
         <div className="flex flex-col lg:w-2/3 gap-6">
-          <h1 className="text-4xl font-bold text-gray-800">{product.name}</h1>
+          <h1 className="text-4xl font-bold text-gray-800">{capitalizedProductName}</h1>
           <p className="text-gray-600 mb-2">{product.details}</p>
 
           {/* Specifications Section */}
@@ -94,18 +111,18 @@ const ProductDetails = () => {
           <div className="flex flex-wrap gap-4">
             <Link
               to={`/updateProduct/${product._id}`}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700"
+              className="px-6 py-2 flex justify-center items-center bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700"
             >
-              Edit
+              <FaGear></FaGear>
             </Link>
             <button
               onClick={() => handleDelete(id)}
               className="px-6 py-2 bg-red-800 text-white rounded-lg shadow-md hover:bg-red-900"
             >
-              Delete
+              <FaTrash></FaTrash>
             </button>
-            <button className="px-6 py-2 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-yellow-600">
-              Buy Now
+            <button onClick={handleBuy} className="px-6 py-2 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-yellow-600">
+              <FaShoppingCart></FaShoppingCart>
             </button>
           </div>
         </div>

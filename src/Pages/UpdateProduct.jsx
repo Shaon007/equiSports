@@ -11,7 +11,7 @@ const UpdateProduct = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://equi-sports-server-psi.vercel.app/product/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data))
       .catch((error) => console.error("Error fetching product details:", error));
@@ -33,7 +33,7 @@ const UpdateProduct = () => {
       email: form.email.value,
     };
 
-    fetch(`http://localhost:5000/product/${id}`, {
+    fetch(`https://equi-sports-server-psi.vercel.app/product/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

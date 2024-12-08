@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const MyProduct = () => {
   const { user } = useContext(AuthContext);
   const products = useLoaderData();
-  console.log(user);
+  // console.log(user);
   const filteredProducts = products.filter(
     (product) => product.host?.email === user?.email
   );
