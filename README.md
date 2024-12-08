@@ -4,7 +4,7 @@ EquiSports is an e-commerce application that displays product details, including
 
 ## Live Demo
 
-Check out the live version of **EquiSports** here: [EquiSports Live](https://equi-sports.vercel.app/)
+Check out the live version of **EquiSports** here: [EquiSports Live](https://equi-sports-e0b09.web.app/)
 
 ## Features
 
@@ -26,4 +26,3 @@ Check out the live version of **EquiSports** here: [EquiSports Live](https://equ
 - **Fetch API**: For retrieving data from the backend API.
 
 Feel free to explore the site using the live link and share your feedback! 😊
-
