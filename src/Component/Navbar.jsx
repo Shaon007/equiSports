@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
@@ -11,15 +11,25 @@ const Navbar = () => {
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
   };
 
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      setScrolled(isScrolled);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <div className="max-w-[1600px] mx-auto flex justify-between items-center p-2 px-6 bg-stone-200 sticky top-0 z-50 shadow-lg">
+    <div className={`max-w-[1600px] mx-auto flex justify-between items-center px-2 md:px-16 py-2  fixed top-0 w-full z-50 shadow-lg transition-all duration-300 ${scrolled ? "bg-[#1F2937] shadow-md" : "bg-gray-200  bg-opacity-30"
+      }`}>
       {/* Logo */}
       <div className="text-lg gap-2 flex justify-center items-center">
-        <Link className="font-bold text-stone-700" to='/'>
-          <img className="md:w-36 w-28" src="https://i.postimg.cc/Rhn1dWfV/Screenshot-2024-12-08-210839-removebg-preview.png" alt="" />
+        <Link className="font-bold text-white" to='/'>
+          <img className="md:w-36 w-28 " src="https://i.postimg.cc/Rhn1dWfV/Screenshot-2024-12-08-210839-removebg-preview.png" alt="websitelogo" />
         </Link>
       </div>
 
@@ -40,8 +50,9 @@ const Navbar = () => {
             <path
               d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
           </svg>
-          <input type="checkbox" value="synthwave" className="toggle theme-controller" />
+          <input type="checkbox" value="synthwave" className="toggle theme-controller " />
           <svg
+            className=""
             xmlns="http://www.w3.org/2000/svg"
             width="20"
             height="20"
@@ -58,7 +69,7 @@ const Navbar = () => {
           <Link to="/myProfile" className="w-10 h-10">
             {user && user?.photoURL ? (
               <img
-                className="rounded-full object-cover w-10 h-10 border-2 border-white"
+                className="rounded-full  object-cover w-10 h-10 border-2 border-white"
                 src={user.photoURL}
                 alt="User"
               />
@@ -102,7 +113,9 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            `text-stone-700 ${isActive ? "text-stone-800 border-b-2 border-gray-600 pb-1" : ""}`
+            isActive
+              ? "text-cyan-200 hover:text-gray-600 underline underline-offset-8"
+              : "text-cyan-300 hover:text-cyan-500 transition-colors duration-200"
           }
         >
           Home
@@ -110,7 +123,9 @@ const Navbar = () => {
         <NavLink
           to="/allProduct"
           className={({ isActive }) =>
-            `text-stone-700 ${isActive ? "border-b-2 border-gray-600 pb-1" : ""}`
+            isActive
+              ? "text-cyan-200 hover:text-gray-600 underline underline-offset-8"
+              : "text-cyan-300 hover:text-cyan-500 transition-colors duration-200"
           }
         >
           All Equipment
@@ -118,7 +133,9 @@ const Navbar = () => {
         <NavLink
           to="/addNewProduct"
           className={({ isActive }) =>
-            `text-stone-700 ${isActive ? "border-b-2 border-gray-600 pb-1" : ""}`
+            isActive
+              ? "text-cyan-200 hover:text-gray-600 underline underline-offset-8"
+              : "text-cyan-300 hover:text-cyan-500 transition-colors duration-200"
           }
         >
           Add New
@@ -126,7 +143,9 @@ const Navbar = () => {
         <NavLink
           to="/myProduct"
           className={({ isActive }) =>
-            `text-stone-700 ${isActive ? "border-b-2 border-gray-600 pb-1" : ""}`
+            isActive
+              ? "text-cyan-200 hover:text-gray-600 underline underline-offset-8"
+              : "text-cyan-300 hover:text-cyan-500 transition-colors duration-200"
           }
         >
           My Equipment
@@ -199,7 +218,7 @@ const Navbar = () => {
           <Link to="/myProfile" className="w-10 h-10">
             {user && user?.photoURL ? (
               <img
-                className="rounded-full object-cover w-10 h-10 border-2 border-white"
+                className="rounded-full transform transition-transform duration-300 hover:scale-110 object-cover w-10 h-10 border-2 border-white"
                 src={user.photoURL}
                 alt="User"
               />
@@ -214,7 +233,7 @@ const Navbar = () => {
 
           {/* Tooltip for Username */}
           {isHovered && user?.displayName && (
-            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 rounded bg-gray-400 text-sm w-36 shadow-lg">
+            <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 rounded bg-gray-200 text-sm w-36 shadow-lg overflow-hidden text-ellipsis whitespace-nowrap text-center">
               {user.displayName}
             </div>
           )}
@@ -224,7 +243,7 @@ const Navbar = () => {
         {user && user?.email ? (
           <button
             onClick={logOut}
-            className="px-4 py-2  border-stone-400 border-2 font-semibold rounded-lg text-stone-700 hover:bg-white hover:text-[#9333EA] transition"
+            className="px-4 py-2  bg-cyan-500 font-semibold rounded-lg text-stone-900 hover:bg-gray-200 hover:scale-105 hover:text-cyan-700 transition"
           >
             Log Out
           </button>
@@ -232,13 +251,13 @@ const Navbar = () => {
           <div className="flex gap-2">
             <Link
               to="/login"
-              className="px-4 py-2 border-stone-400 border-2 font-semibold rounded-lg text-stone-700 hover:bg-white hover:text-[#9333EA] transition"
+              className="px-4 py-2 bg-cyan-500 font-semibold rounded-lg text-stone-900 hover:bg-gray-200 hover:text-cyan-700 hover:scale-105 transition"
             >
               Log In
             </Link>
             <Link
               to="/register"
-              className="px-4 py-2 border-stone-400 border-2 font-semibold rounded-lg text-stone-700 hover:bg-white hover:text-[#9333EA] transition"
+                className="px-4 py-2 bg-cyan-500 font-semibold rounded-lg text-stone-900 hover:bg-gray-200 hover:text-cyan-700 hover:scale-105 transition"
             >
               Sign Up
             </Link>

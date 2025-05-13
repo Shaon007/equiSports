@@ -32,9 +32,9 @@ const AutoSlider = () => {
   }, []);
 
   return (
-    <div id="default-carousel" className="relative w-full" data-carousel="slide">
+    <div id="default-carousel" className="relative w-full " data-carousel="slide">
       {/* Carousel wrapper */}
-      <div className="relative  h-56 overflow-hidden rounded-lg md:h-[440px] lg:h-[660px]">
+      <div className="relative h-screen overflow-hidden rounded-lg ">
         {images.map((image, index) => (
           <div
             key={index}

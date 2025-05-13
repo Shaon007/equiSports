@@ -108,13 +108,18 @@ const UpdateProduct = () => {
               <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
                 Category
               </label>
-              <input
-                type="text"
+              <select
                 name="category"
+                id="category"
                 defaultValue={product.category}
-                placeholder="Enter category"
-                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              />
+                className="border-0 px-3 py-3 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              >
+                <option value="Cricket">Cricket</option>
+                <option value="Football">Football</option>
+                <option value="Cycling">Cycling</option>
+                <option value="Running">Running</option>
+                <option value="Accessories">Accessories</option>
+              </select>
             </div>
           </div>
 
@@ -125,26 +130,10 @@ const UpdateProduct = () => {
                 Price
               </label>
               <input
-                type="number"
+                type="text"
                 name="price"
                 defaultValue={product.price}
-                placeholder="Enter price"
-                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              />
-            </div>
-          </div>
-
-          {/* Stock */}
-          <div className="w-full lg:w-6/12 px-4">
-            <div className="relative w-full mb-3">
-              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
-                Stock
-              </label>
-              <input
-                type="number"
-                name="stock"
-                defaultValue={product.stock}
-                placeholder="Enter stock"
+                placeholder="Enter Price"
                 className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
@@ -157,10 +146,10 @@ const UpdateProduct = () => {
                 Rating
               </label>
               <input
-                type="number"
+                type="text"
                 name="rating"
                 defaultValue={product.rating}
-                placeholder="Enter rating"
+                placeholder="Enter Product Rating"
                 className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
@@ -176,65 +165,81 @@ const UpdateProduct = () => {
                 type="text"
                 name="customization"
                 defaultValue={product.customization}
-                placeholder="Enter customization details"
+                placeholder="Customization Requirement"
                 className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
 
-          {/* Processing */}
+          {/* Processing Time */}
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
               <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
-                Processing
+                Processing Time
               </label>
               <input
                 type="text"
                 name="processing"
                 defaultValue={product.processing}
-                placeholder="Enter processing details"
+                placeholder="Enter product process time"
                 className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
 
-          {/* Details */}
+          {/* Product Photo */}
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
               <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
-                Details
-              </label>
-              <input
-                type="text"
-                name="details"
-                defaultValue={product.details}
-                placeholder="Enter product details"
-                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              />
-            </div>
-          </div>
-
-          {/* Photo URL */}
-          <div className="w-full lg:w-6/12 px-4">
-            <div className="relative w-full mb-3">
-              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
-                Photo URL
+                Product Photo
               </label>
               <input
                 type="text"
                 name="photo"
                 defaultValue={product.photo}
-                placeholder="Enter photo URL"
+                placeholder="Enter Product Photo"
+                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              />
+            </div>
+          </div>
+
+          {/* Stock Status */}
+          <div className="w-full lg:w-6/12 px-4">
+            <div className="relative w-full mb-3">
+              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
+                Stock Status
+              </label>
+              <input
+                type="text"
+                name="stock"
+                defaultValue={product.stock}
+                placeholder="Enter Available Product"
+                className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              />
+            </div>
+          </div>
+
+          {/* Description */}
+          <div className="w-full px-4">
+            <div className="relative w-full mb-3">
+              <label className="block uppercase text-gray-800 text-xs font-bold mb-2">
+                Description
+              </label>
+              <input
+                type="text"
+                name="details"
+                defaultValue={product.details}
+                placeholder="Enter Product Details"
                 className="border-0 px-3 py-3 placeholder-gray-800 text-gray-800 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
             </div>
           </div>
 
           {/* Submit Button */}
-          <div className="w-full px-4 mt-4">
+          <div className="w-full px-4">
             <button
               type="submit"
-              className="w-full bg-gray-600 text-white py-2 px-4 rounded focus:outline-none hover:bg-gray-700"
+              className="bg-[#0A58C1] text-white font-bold uppercase text-xs px-6 py-3 shadow hover:shadow-lg focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
             >
               Update Product
             </button>

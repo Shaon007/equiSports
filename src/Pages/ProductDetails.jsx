@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { FaEdit, FaRegEdit, FaShoppingCart } from "react-icons/fa";
 import { FaGear, FaTrash } from "react-icons/fa6";
+import Loading from "../Component/Loading";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -34,7 +35,7 @@ const ProductDetails = () => {
   }, [id]);
 
   if (!product) {
-    return <div className="text-center text-xl font-bold mt-20">Loading...</div>;
+    return <div className="text-center text-xl font-bold mt-20"><Loading></Loading></div>;
   }
 
   // Capitalize the first letter of the product name
