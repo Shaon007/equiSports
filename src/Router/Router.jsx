@@ -13,6 +13,9 @@ import ForgotPass from "../Pages/ForgotPass";
 import PrivateRoute from "./PrivateRoute";
 import Contact from "../Pages/Contact";
 import MyProfile from "../Component/MyProfile";
+import Dashboard from "../Pages/Dashboard";
+import Blogs from './../Pages/Blogs';
+import About from "../Pages/About";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +35,26 @@ const router = createBrowserRouter([
           <PrivateRoute>
             <AddNewProduct />
           </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard",
+        element: (
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/blogs",
+        element: (
+            <Blogs />
+        ),
+      },
+      {
+        path: "/about",
+        element: (
+          <About />
         ),
       },
       {

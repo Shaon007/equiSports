@@ -24,7 +24,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className={`max-w-[1600px] mx-auto flex justify-between items-center px-2 md:px-16 py-2  fixed top-0 w-full z-50 shadow-lg transition-all duration-300 ${scrolled ? "bg-[#1F2937] shadow-md" : "bg-gray-200  bg-opacity-30"
+    <div className={`max-w-[1600px] mx-auto flex justify-between items-center px-2 md:px-16 py-2  fixed top-0 w-full z-50 shadow-lg transition-all duration-300 ${scrolled ? "bg-gray-500 shadow-md" : "bg-gray-200  bg-opacity-30"
       }`}>
       {/* Logo */}
       <div className="text-lg gap-2 flex justify-center items-center">
@@ -120,6 +120,7 @@ const Navbar = () => {
         >
           Home
         </NavLink>
+
         <NavLink
           to="/allProduct"
           className={({ isActive }) =>
@@ -131,6 +132,16 @@ const Navbar = () => {
           All Equipment
         </NavLink>
         <NavLink
+          to="/blogs"
+          className={({ isActive }) =>
+            isActive
+              ? "text-cyan-200 hover:text-gray-600 underline underline-offset-8"
+              : "text-cyan-300 hover:text-cyan-500 transition-colors duration-200"
+          }
+        >
+          Blogs
+        </NavLink>
+        {/* <NavLink
           to="/addNewProduct"
           className={({ isActive }) =>
             isActive
@@ -149,6 +160,26 @@ const Navbar = () => {
           }
         >
           My Equipment
+        </NavLink> */}
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? "text-cyan-200 hover:text-gray-600 underline underline-offset-8"
+              : "text-cyan-300 hover:text-cyan-500 transition-colors duration-200"
+          }
+        >
+          About Us
+        </NavLink>
+        <NavLink
+          to="/dashboard"
+          className={({ isActive }) =>
+            isActive
+              ? "text-cyan-200 hover:text-gray-600 underline underline-offset-8"
+              : "text-cyan-300 hover:text-cyan-500 transition-colors duration-200"
+          }
+        >
+          Dashboard
         </NavLink>
 
         <div className="flex flex-col lg:hidden items-center gap-4 mt-4">
@@ -215,7 +246,7 @@ const Navbar = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <Link to="/myProfile" className="w-10 h-10">
+          <Link to="/dashboard" className="w-10 h-10">
             {user && user?.photoURL ? (
               <img
                 className="rounded-full transform transition-transform duration-300 hover:scale-110 object-cover w-10 h-10 border-2 border-white"

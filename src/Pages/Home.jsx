@@ -42,7 +42,7 @@ const Home = () => {
       </div>
 
       <div className="w-11/12 mx-auto ">
-        <div className="text-3xl text-center mt-12 font-semibold">
+        <div className="text-3xl text-center font-mono mt-12 font-semibold">
           <h2>Explore Our Products</h2>
         </div>
         {/* Category Filter Buttons */}
@@ -52,7 +52,7 @@ const Home = () => {
             className="btn btn-active p-2 h-36 w-36 rounded-full "
           >
             <img className="object-cover rounded-full w-32 h-32 transform transition-all duration-300 hover:scale-110" src="https://i.pinimg.com/736x/7a/d3/d5/7ad3d59842654cd81ecc3c5507b4746b.jpg" alt="All" />
-            <p className="pt-2">All</p>
+            <p className="pt-2 ">All</p>
           </button>
 
           {categories.map((category) => {
@@ -81,12 +81,13 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="my-20">
-        <h2 className="text-3xl text-center mt-12 font-semibold">Some Satisfied Customers</h2>
-        <Review></Review>
-      </div>
-      <div>
+
+      <div className="w-11/12 mx-auto">
         <TopRated></TopRated>
+      </div>
+      <div className="my-20 ">
+        <h2 className="text-3xl text-center mt-12 font-mono font-semibold">Some Satisfied Customers</h2>
+        <Review></Review>
       </div>
       <div>
         <Blogs></Blogs>

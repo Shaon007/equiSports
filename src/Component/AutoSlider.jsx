@@ -49,9 +49,9 @@ const AutoSlider = () => {
             />
 
             {/* Slogan  */}
-            <div className="absolute  w-full h-full bg-black/50 flex flex-col justify-center items-start px-4 text-gray-400 md:text-gray-200">
-              <span className="pl-10 pt-20 text-xl md:text-3xl lg:text-5xl w-[460px] font-bold">{sliderContent[index].slogan}</span>
-              <p className="pl-10 w-[400px] mt-2 text-base md:text-lg lg:text-xl">{sliderContent[index].subheading}</p>
+            <div className="absolute  w-full h-full bg-black/50 flex flex-col justify-center items-start px-10 text-gray-400 md:text-gray-200">
+              <span className="pl-10 pt-20 text-xl font-mono md:text-3xl lg:text-5xl w:[420px] lg:w-[650px] font-bold">{sliderContent[index].slogan}</span>
+              <p className="pl-10 w-[400px] mt-2 text-base font-mono md:text-lg lg:text-xl">{sliderContent[index].subheading}</p>
             </div>
           </div>
         ))}
@@ -74,7 +74,7 @@ const AutoSlider = () => {
       {/* Slider controls */}
       <button
         type="button"
-        className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer brightness-50 group focus:outline-none"
         onClick={() =>
           setCurrentIndex((prevIndex) =>
             prevIndex === 0 ? images.length - 1 : prevIndex - 1
