@@ -44,6 +44,7 @@ const router = createBrowserRouter([
             <Dashboard />
           </PrivateRoute>
         ),
+        loader: () => fetch('https://equi-sports-server-psi.vercel.app/product'),
       },
       {
         path: "/blogs",

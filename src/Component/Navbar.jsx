@@ -150,8 +150,8 @@ const Navbar = () => {
           }
         >
           Add New
-        </NavLink>
-        <NavLink
+        </NavLink> */}
+        {/* <NavLink
           to="/myProduct"
           className={({ isActive }) =>
             isActive

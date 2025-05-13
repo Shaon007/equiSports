@@ -37,9 +37,9 @@ const MyProfile = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center  py-6">
+    <div className=" bg-gray-100 flex items-center justify-center  py-6">
       <div className="w-full max-w-lg bg-white rounded-lg shadow-lg p-6">
-        <h2 className="text-3xl font-bold text-center text-gray-500 mb-6">
+        <h2 className="text-3xl font-mono font-bold text-center text-gray-500 mb-6">
           Welcome, {user?.displayName}
         </h2>
 
@@ -49,7 +49,7 @@ const MyProfile = () => {
             alt="User Avatar"
             className="w-32 h-32 rounded-full object-cover shadow-md mb-4"
           />
-          <h3 className="text-xl font-semibold text-gray-800">
+          <h3 className="text-xl font-semibold font-mono text-cyan-700">
             {user?.displayName || "Your Name"}
           </h3>
           <p className="text-gray-500">{user?.email}</p>
