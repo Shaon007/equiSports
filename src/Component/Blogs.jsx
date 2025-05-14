@@ -1,7 +1,9 @@
 import { FaArrowRight } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Blogs = () => {
+  const navigate = useNavigate();
   const handleModal = () => {
     Swal.fire({
       title: 'Not Available!',
@@ -28,7 +30,7 @@ const Blogs = () => {
             <p className="md:text-sm lg:text-base text-gray-600 mb-2 lg:mb-4">
               Achieving your athletic goals requires consistent effort, dedication, and discipline. An often overlooked yet critical aspect of training is injury prevention. Injuries can set you back, disrupt your progress, and demotivate you. To keep moving forward without setbacks, here are some essential tips and...
             </p>
-            <button onClick={handleModal}
+            <button onClick={() => navigate('/blogs')}
               className="inline-block px-6 py-3 mt-2 rounded-md bg-gray-400 font-semibold hover:bg-gray-500 transition duration-300"
             >
               Read more
@@ -87,7 +89,7 @@ const Blogs = () => {
 
           </div>
           <div>
-            <button onClick={handleModal} className="btn btn-active bg-gray-400 hover:bg-gray-500" >View all <FaArrowRight></FaArrowRight></button>
+            <button onClick={() => navigate('/blogs')} className="btn btn-active bg-gray-400 hover:bg-gray-500" >View all <FaArrowRight></FaArrowRight></button>
           </div>
         </div>
       </div>

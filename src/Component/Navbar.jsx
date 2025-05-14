@@ -24,7 +24,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className={`max-w-[1600px] mx-auto flex justify-between items-center px-2 md:px-16 py-2  fixed top-0 w-full z-50 shadow-lg transition-all duration-300 ${scrolled ? "bg-gray-500 shadow-md" : "bg-gray-200  bg-opacity-30"
+    <div className={`max-w-[1600px] mx-auto flex justify-between items-center px-2 md:px-16 py-2  fixed top-0 w-full z-50 shadow-lg transition-all duration-300 ${scrolled ? "bg-gray-500 shadow-md" : "bg-stone-800  bg-opacity-30"
       }`}>
       {/* Logo */}
       <div className="text-lg gap-2 flex justify-center items-center">

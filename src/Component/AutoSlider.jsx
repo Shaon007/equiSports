@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const AutoSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,14 +33,13 @@ const AutoSlider = () => {
   }, []);
 
   return (
-    <div id="default-carousel" className="relative w-full " data-carousel="slide">
+    <div id="default-carousel" className="relative w-full" data-carousel="slide">
       {/* Carousel wrapper */}
-      <div className="relative h-screen overflow-hidden rounded-lg ">
+      <div className="relative h-screen overflow-hidden rounded-md shadow-md">
         {images.map((image, index) => (
           <div
             key={index}
-            className={`${currentIndex === index ? "block" : "hidden"
-              } duration-1000 transition-all ease-in-out`}
+            className={`${currentIndex === index ? "block" : "hidden"} duration-1000 transition-all ease-in-out`}
             data-carousel-item
           >
             <img
@@ -48,11 +48,34 @@ const AutoSlider = () => {
               alt={`Slide ${index + 1}`}
             />
 
-            {/* Slogan  */}
-            <div className="absolute  w-full h-full bg-black/50 flex flex-col justify-center items-start px-10 text-gray-400 md:text-gray-200">
-              <span className="pl-10 pt-20 text-xl font-mono md:text-3xl lg:text-5xl w:[420px] lg:w-[650px] font-bold">{sliderContent[index].slogan}</span>
-              <p className="pl-10 w-[400px] mt-2 text-base font-mono md:text-lg lg:text-xl">{sliderContent[index].subheading}</p>
-            </div>
+            {/* Animate slogan & subheading block */}
+            {currentIndex === index && (
+              <motion.div
+                key={`slide-${index}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                className="absolute w-full h-full bg-black/50 flex flex-col justify-center items-start px-10 text-gray-400 md:text-gray-200"
+              >
+                <motion.span
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="pl-10 pt-20 text-xl font-mono md:text-3xl lg:text-5xl w:[420px] lg:w-[650px] font-bold"
+                >
+                  {sliderContent[index].slogan}
+                </motion.span>
+
+                <motion.p
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="pl-10 w-[400px] mt-2 text-base font-mono md:text-lg lg:text-xl"
+                >
+                  {sliderContent[index].subheading}
+                </motion.p>
+              </motion.div>
+            )}
           </div>
         ))}
       </div>
@@ -63,7 +86,7 @@ const AutoSlider = () => {
           <button
             key={index}
             type="button"
-            className="w-3 h-3 rounded-full"
+            className={`w-3 h-3 rounded-full ${currentIndex === index ? "bg-white" : "bg-gray-400"}`}
             aria-current={currentIndex === index ? "true" : "false"}
             aria-label={`Slide ${index + 1}`}
             onClick={() => setCurrentIndex(index)}
@@ -105,9 +128,7 @@ const AutoSlider = () => {
         type="button"
         className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={() =>
-          setCurrentIndex((prevIndex) =>
-            (prevIndex + 1) % images.length
-          )
+          setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
         }
       >
         <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">

@@ -58,10 +58,10 @@ const Footer = () => {
                   Home
                 </Link>
                 <Link
-                  to="/allProduct"
+                  to="/blogs"
                   className="px-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline"
                 >
-                  All Product
+                  Blogs
                 </Link>
                 <Link
                   to="/myProfile"
@@ -70,10 +70,10 @@ const Footer = () => {
                   Profile
                 </Link>
                 <Link
-                  to=""
+                  to="/about"
                   className="px-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline"
                 >
-                  FAQ
+                  About Us
                 </Link>
                 <button
                   onClick={handleModal}

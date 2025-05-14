@@ -42,35 +42,37 @@ const Home = () => {
       </div>
 
       <div className="w-11/12 mx-auto ">
-        <div className="text-3xl text-center font-mono mt-12 font-semibold">
-          <h2>Explore Our Products</h2>
-        </div>
-        {/* Category Filter Buttons */}
-        <div className="lg:w-9/12 mx-auto justify-center gap-8 my-16 flex-wrap grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 ">
-          <button
-            onClick={() => handleFilterByCategory("All")}
-            className="btn btn-active p-2 h-36 w-36 rounded-full "
-          >
-            <img className="object-cover rounded-full w-32 h-32 transform transition-all duration-300 hover:scale-110" src="https://i.pinimg.com/736x/7a/d3/d5/7ad3d59842654cd81ecc3c5507b4746b.jpg" alt="All" />
-            <p className="pt-2 ">All</p>
-          </button>
+        <div className="bg-red-200">
+          <div className="text-3xl text-center font-mono mt-12 font-semibold">
+            <h2>Explore Our Products</h2>
+          </div>
+          {/* Category Filter Buttons */}
+          <div className="lg:w-9/12 mx-auto justify-center gap-8 my-16 flex-wrap grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 ">
+            <button
+              onClick={() => handleFilterByCategory("All")}
+              className="btn btn-active p-2 h-36 w-36 rounded-full "
+            >
+              <img className="object-cover rounded-full w-32 h-32 transform transition-all duration-300 hover:scale-110" src="https://i.pinimg.com/736x/7a/d3/d5/7ad3d59842654cd81ecc3c5507b4746b.jpg" alt="All" />
+              <p className="pt-2 ">All</p>
+            </button>
 
-          {categories.map((category) => {
-            if (categoryImages[category]) {
-              return (
-                <button
-                  key={category}
-                  onClick={() => handleFilterByCategory(category)}
-                  className="btn btn-active  p-2 h-36 w-36 rounded-full"
-                >
-                  {/* Category Image */}
-                  <img className="object-cover rounded-full w-32 h-32 transform transition-all duration-300 hover:scale-110" src={categoryImages[category]} alt={category} />
-                  <p className="pt-2">{category}</p>
-                </button>
-              );
-            }
-            return null;
-          })}
+            {categories.map((category) => {
+              if (categoryImages[category]) {
+                return (
+                  <button
+                    key={category}
+                    onClick={() => handleFilterByCategory(category)}
+                    className="btn  btn-active  p-2 h-36 w-36 rounded-full"
+                  >
+                    {/* Category Image */}
+                    <img className="object-cover rounded-full w-32 h-32 transform transition-all duration-300 hover:scale-110" src={categoryImages[category]} alt={category} />
+                    <p className="pt-2 ">{category}</p>
+                  </button>
+                );
+              }
+              return null;
+            })}
+          </div>
         </div>
 
         {/* Product Grid */}
