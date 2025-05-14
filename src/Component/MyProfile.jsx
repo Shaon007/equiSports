@@ -37,7 +37,7 @@ const MyProfile = () => {
   };
 
   return (
-    <div className=" bg-gray-100 flex items-center justify-center  py-6">
+    <div className=" bg-[url('https://i.pinimg.com/1200x/42/b7/14/42b714cb88c1de11592dacdae7161066.jpg')] flex items-center justify-center  py-6">
       <div className="w-full max-w-lg bg-white rounded-lg shadow-lg p-6">
         <h2 className="text-3xl font-mono font-bold text-center text-gray-500 mb-6">
           Welcome, {user?.displayName}

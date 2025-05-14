@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
+import { FaArrowLeft } from "react-icons/fa6";
 
 const UpdateProduct = () => {
   const { id } = useParams();
@@ -60,12 +61,19 @@ const UpdateProduct = () => {
   }
 
   return (
-    <div className="flex justify-center items-center my-10">
+    <div className="flex justify-center items-center my-20 =">
+
       <form
         onSubmit={handleUpdateProduct}
-        className="max-w-5xl mx-auto bg-[#F4F3F0] px-4 md:px-8 py-4"
+        className="max-w-5xl mx-auto bg-[#F4F3F0] px-4 md:px-8 py-4 shadow-md rounded-lg"
       >
-        <h6 className="text-gray-800 text-3xl mt-3 mb-6 font-bold uppercase text-center">
+        <button
+          onClick={() => navigate(-1)}
+          className=" bg-cyan-600 h-8 gap-2 flex items-center justify-center text-gray-100 p-3 font-semibold  rounded-lg hover:bg-gray-500 transition"
+        > <FaArrowLeft/>
+          Home
+        </button>
+        <h6 className="text-gray-800 font-mono text-3xl mt-3 mb-6 font-bold  text-center">
           Update Product
         </h6>
         <div className="flex flex-wrap">
@@ -239,7 +247,7 @@ const UpdateProduct = () => {
           <div className="w-full px-4">
             <button
               type="submit"
-              className="bg-[#0A58C1] text-white font-bold uppercase text-xs px-6 py-3 shadow hover:shadow-lg focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              className="bg-cyan-700 text-white font-bold  text-sm px-6 py-3 shadow hover:shadow-lg focus:outline-none focus:ring w-full ease-linear transition-all duration-150 rounded-lg"
             >
               Update Product
             </button>

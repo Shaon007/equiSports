@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ProductCard from "../Component/ProductCard";
 import AutoSlider from "../Component/AutoSlider";
@@ -10,7 +10,7 @@ const Home = () => {
   const products = useLoaderData();
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [categories, setCategories] = useState([]);
-
+  const navigate = useNavigate();
   // unique categories
   useState(() => {
     const uniqueCategories = [...new Set(products.map((product) => product.category))];
@@ -36,16 +36,25 @@ const Home = () => {
   };
 
   return (
-    <div className="w-full mx-auto ">
+    <div className="w-full mx-auto bg-stone-200 ">
       <div className="">
         <AutoSlider />
       </div>
 
-      <div className="w-11/12 mx-auto ">
-        <div className="bg-red-200">
-          <div className="text-3xl text-center font-mono mt-12 font-semibold">
-            <h2>Explore Our Products</h2>
+      <div className="w-full mx-auto ">
+        <div className="">
+          <div
+            className="relative mt-16 h-72 flex items-center justify-center bg-fixed bg-center bg-cover "
+            style={{
+              backgroundImage: "url('https://i.pinimg.com/1200x/88/4c/3c/884c3c4285c79df0be1371b5344788da.jpg')",
+            }}
+          >
+            <div className="bg-black bg-opacity-50 w-full h-full absolute top-0 left-0"></div>
+            <h2 className="relative z-10 text-4xl md:text-5xl text-white font-mono font-semibold">
+              Explore Our Products
+            </h2>
           </div>
+
           {/* Category Filter Buttons */}
           <div className="lg:w-9/12 mx-auto justify-center gap-8 my-16 flex-wrap grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 ">
             <button
@@ -53,7 +62,7 @@ const Home = () => {
               className="btn btn-active p-2 h-36 w-36 rounded-full "
             >
               <img className="object-cover rounded-full w-32 h-32 transform transition-all duration-300 hover:scale-110" src="https://i.pinimg.com/736x/7a/d3/d5/7ad3d59842654cd81ecc3c5507b4746b.jpg" alt="All" />
-              <p className="pt-2 ">All</p>
+              <p className="pt-2 text-lg">All</p>
             </button>
 
             {categories.map((category) => {
@@ -66,29 +75,41 @@ const Home = () => {
                   >
                     {/* Category Image */}
                     <img className="object-cover rounded-full w-32 h-32 transform transition-all duration-300 hover:scale-110" src={categoryImages[category]} alt={category} />
-                    <p className="pt-2 ">{category}</p>
+                    <p className="pt-2 text-lg">{category}</p>
                   </button>
                 );
               }
               return null;
             })}
           </div>
+
         </div>
 
         {/* Product Grid */}
-        <div className=" lg:w-11/12 mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
-
-          {filteredProducts.map((product) => (
+        <div className="lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {filteredProducts.slice(0, 12).map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}
         </div>
+
+        {/* View All Button */}
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={() => navigate("/allProduct")}
+            className="bg-cyan-600 text-white px-6 py-2 rounded hover:bg-cyan-700  hover:scale-105 transition"
+          >
+            View All
+          </button>
+        </div>
+
+
       </div>
 
       <div className="w-11/12 mx-auto">
         <TopRated></TopRated>
       </div>
       <div className="my-20 ">
-        <h2 className="text-3xl text-center mt-12 font-mono font-semibold">Some Satisfied Customers</h2>
+        <h2 className="text-3xl text-center mt-12 font-mono font-semibold">-- Some Satisfied Customers --</h2>
         <Review></Review>
       </div>
       <div>

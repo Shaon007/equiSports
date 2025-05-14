@@ -14,7 +14,6 @@ const TopRated = () => {
     fetch('https://equi-sports-server-psi.vercel.app/product')
       .then((response) => response.json())
       .then((data) => {
-        // Filter products with 5-star rating
         const filteredProducts = data.filter((product) => Number(product.rating) === 5);
         setProducts(filteredProducts);
       })
@@ -22,19 +21,19 @@ const TopRated = () => {
   }, []);
 
   return (
-    <div className="my-20 px-8 md:px-16">
-      <div className="flex flex-col lg:flex-row items-center justify-between">
-        {/* Left section with text */}
-        <div className="lg:w-1/2 w-full text-center lg:text-left mb-8 lg:mb-0">
-          <h2 className="text-3xl lg:text-5xl font-bold text-gray-700 mb-4">
-            Top Rated Products
+    <div className="my-20 px-4 md:px-10 lg:px-20 bg-gradient-to-r from-teal-50 to-purple-100 py-16 rounded-xl shadow-inner">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+        {/* Text section */}
+        <div className="lg:w-1/2 text-center lg:text-left">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-cyan-800 font-mono mb-4">
+             Top Rated Products
           </h2>
-          <p className="text-lg lg:text-2xl text-gray-700">
-            Discover the highest-rated products based on customer feedback and reviews.
+          <p className="text-lg md:text-xl text-gray-700 font-mono leading-relaxed">
+            Dive into our most loved and highest-reviewed products — handpicked by your fellow sports lovers.
           </p>
         </div>
 
-        {/* Right section with Swiper carousel */}
+        {/* Swiper section */}
         <div className="lg:w-1/2 w-full">
           <Swiper
             spaceBetween={30}
@@ -51,21 +50,19 @@ const TopRated = () => {
             className="mySwiper"
           >
             {products.length === 0 ? (
-              <p className="text-center text-lg text-gray-600 w-full">
-                No products to show.
-              </p>
+              <p className="text-center text-lg text-gray-600 w-full">No products to show.</p>
             ) : (
               products.map((product) => (
                 <SwiperSlide key={product._id}>
-                  <div className="text-center bg-gray-800 p-6 rounded-md">
-                    <Link to={`/product/${product._id}`} className="block">
+                  <div className="bg-stone-50 p-6 rounded-xl shadow-lg border hover:shadow-2xl transition duration-300">
+                    <Link to={`/product/${product._id}`}>
                       <img
                         src={product.photo}
                         alt={product.name}
-                        className="w-[70%] h-64 object-contain rounded-md mb-4 mx-auto"
+                        className="w-[80%] h-60 object-contain rounded-lg mx-auto mb-4 hover:scale-105 transition-transform duration-300"
                       />
-                      <h3 className="text-2xl font-bold text-white">{product.name}</h3>
-                      <p className="text-gray-300 mt-2 mb-4">{product.description}</p>
+                      <h3 className="text-xl flex  justify-center font-semibold text-gray-700">{product.name}</h3>
+                      <p className="text-gray-600 mt-2 text-sm">{product.description}</p>
                     </Link>
                   </div>
                 </SwiperSlide>

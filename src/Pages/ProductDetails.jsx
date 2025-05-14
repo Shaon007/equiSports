@@ -2,7 +2,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { FaEdit, FaRegEdit, FaShoppingCart } from "react-icons/fa";
-import { FaGear, FaTrash } from "react-icons/fa6";
+import { FaArrowLeft, FaGear, FaTrash } from "react-icons/fa6";
 import Loading from "../Component/Loading";
 
 const ProductDetails = () => {
@@ -38,7 +38,6 @@ const ProductDetails = () => {
     return <div className="text-center text-xl font-bold mt-20"><Loading></Loading></div>;
   }
 
-  // Capitalize the first letter of the product name
   const capitalizedProductName = product.name.charAt(0).toUpperCase() + product.name.slice(1);
 
   const handleDelete = (_id) => {
@@ -72,8 +71,15 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-gray-50 rounded-lg shadow-lg my-10">
-      <div className="flex flex-col lg:flex-row gap-10">
+    <div className="max-w-6xl mx-auto  mt-20 p-6 bg-white rounded-lg shadow-lg my-20">
+      <button
+        onClick={() => navigate(-1)}
+        className=" bg-cyan-600 h-8 gap-2 flex items-center justify-center text-gray-100 p-3 font-semibold mb-4 rounded-lg hover:bg-gray-500 transition"
+      > <FaArrowLeft />
+        Back
+      </button>
+      <div className="flex flex-col lg:flex-row gap-10 lg:gap-20">
+
         {/* Product Image */}
         <div className="flex flex-col flex-shrink-0 justify-center items-center lg:w-1/3">
           <img
@@ -81,7 +87,7 @@ const ProductDetails = () => {
             alt={capitalizedProductName}
             className="rounded-lg w-full object-contain"
           />
-          <div className="flex flex-col lg:flex-row gap-4 my-4">
+          <div className="flex flex-col lg:flex-row gap-4 my-4 ">
             <span className="text-3xl font-semibold text-gray-800">${product.price}</span>
             <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-lg">
               ⭐ {product.rating} / 5
@@ -90,21 +96,21 @@ const ProductDetails = () => {
         </div>
 
         {/* Product Information */}
-        <div className="flex flex-col lg:w-2/3 gap-6">
-          <h1 className="text-4xl font-bold text-gray-800">{capitalizedProductName}</h1>
-          <p className="text-gray-600 mb-2">{product.details}</p>
+        <div className="flex flex-col lg:w-3/5 gap-6">
+          <h1 className="text-4xl font-mono font-bold text-gray-800">{capitalizedProductName}</h1>
+          <p className="text-gray-600 font-mono mb-2">{product.details}</p>
 
           {/* Specifications Section */}
           <div className="mb-4">
-            <h2 className="text-2xl font-bold text-gray-800 mb-3">Specifications</h2>
-            <ul className="list-disc list-inside space-y-1 text-gray-700">
+            <h2 className="text-2xl font-bold text-gray-800 font-mono mb-3">Specifications</h2>
+            <ul className="list-disc font-mono list-inside space-y-1 text-gray-700">
               <li>High-quality material</li>
               <li>Durable and long-lasting</li>
               <li>Available in multiple colors</li>
               <li>1-year warranty</li>
             </ul>
           </div>
-          <p className="text-gray-700">
+          <p className="text-gray-700 font-mono">
             <strong>Category:</strong> {product.category}
           </p>
 

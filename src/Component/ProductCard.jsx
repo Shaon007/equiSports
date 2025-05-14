@@ -3,23 +3,22 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
   const { _id, name, rating, details, photo, price } = product;
 
-  // Capitalize the first letter of the name and keep the rest as is
   const capitalizedProductName = name.charAt(0).toUpperCase() + name.slice(1);
 
   return (
-    <div className="relative group lg:w-[300px] lg:h-[424px] bg-[#1F2937] border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <div className="transform transition-transform duration-300 group-hover:scale-105">
+    <div className="relative group lg:w-[300px] lg:h-[424px] bg-white shadow-lg border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 hover:scale-105 transition-transform duration-500">
+      <div className="transform transition-transform duration-300 ">
         <img
-          className="p-4 rounded-xl h-[200px] w-full object-cover"
+          className="rounded-t-lg rounded-b-none h-[200px] w-full object-cover "
           src={photo}
           alt="product"
         />
 
         <div className="px-5 pb-5">
-          <h5 className="text-xl font-semibold tracking-tight text-gray-200 dark:text-white h-[36px] overflow-hidden">
+          <h5 className="text-2xl mt-3 font-semibold tracking-tight text-gray-700 dark:text-white h-[36px] overflow-hidden font-mono">
             {capitalizedProductName}
           </h5>
-          <p className="text-gray-400 dark:text-gray-400 h-[62px] overflow-hidden text-sm">
+          <p className="text-gray-700 font-mono dark:text-gray-400 h-[62px] overflow-hidden text-sm">
             {details}
           </p>
           <div className="flex items-center mt-2.5 mb-5">
@@ -41,12 +40,12 @@ const ProductCard = ({ product }) => {
             </span>
           </div>
           <div className="flex md:flex-col lg:flex-row lg:items-center justify-between">
-            <span className="text-3xl mb-2 font-bold text-gray-300 dark:text-white">
+            <span className="text-3xl mb-2 font-bold text-gray-900 dark:text-white">
               ${price}
             </span>
             <Link
               to={`/product/${_id}`}
-              className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg"
+              className="px-3 py-1 test-sm text-white bg-cyan-600 hover:bg-cyan-700 rounded-lg hover:scale-90"
             >
               Learn More
             </Link>
