@@ -1,12 +1,16 @@
 import { useState } from "react";
-import { FaUser, FaPlus, FaBoxOpen, FaChartBar } from "react-icons/fa";
+import { FaUser, FaPlus, FaBoxOpen, FaChartBar, FaArrowLeft } from "react-icons/fa";
 import MyProfile from "../Component/MyProfile";
 import AddNewProduct from "./AddNewProduct";
 import MyProduct from "./MyProduct";
 import Statistics from "../Component/Statistics";
+import { useNavigate } from "react-router-dom";
+import { FaHouseChimney } from "react-icons/fa6";
 
 const Dashboard = () => {
   const [activePage, setActivePage] = useState("profile");
+
+  const navigate = useNavigate()
 
   const renderContent = () => {
     switch (activePage) {
@@ -34,7 +38,15 @@ const Dashboard = () => {
     <div className="min-h-screen grid grid-cols-1 md:grid-cols-[250px_1fr] bg-gray-50">
       {/* Sidebar */}
       <aside className="bg-gray-600 text-white font-mono flex flex-col p-6">
-        <h2 className="text-3xl font-bold mb-10 text-center tracking-wide">Dashboard</h2>
+        <div className="flex gap-4 justify-center ">
+          <button
+            onClick={() => navigate("/")}
+            className=" bg-white h-8 w-10 text-gray-800 p-2 font-semibold  rounded-lg hover:bg-gray-200 transition"
+          >
+            <FaHouseChimney/>
+          </button>
+          <h2 className="text-3xl font-bold mb-10 text-center tracking-wide">Dashboard</h2>
+        </div>
         <nav className="space-y-2">
           {navItems.map(({ id, label, icon }) => (
             <button
@@ -51,6 +63,8 @@ const Dashboard = () => {
             </button>
           ))}
         </nav>
+
+
       </aside>
 
       {/* Main Content */}
