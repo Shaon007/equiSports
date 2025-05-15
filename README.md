@@ -25,4 +25,17 @@ Check out the live version of **EquiSports** here: [EquiSports Live](https://equ
 - **React Router**: For handling navigation between pages in the application.
 - **Fetch API**: For retrieving data from the backend API.
 
-Feel free to explore the site using the live link and share your feedback! 😊
+## Credentials
+- **Username** : risejid938@operades.com
+- **Password** : Aa1234
+
+## Installation Guide
+
+Follow these steps to set up the project locally:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/equi-sports.git
+   cd equi-sports
+   npm install
+   npm run dev
