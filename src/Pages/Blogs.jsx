@@ -49,7 +49,7 @@ const Blogs = () => {
   ];
 
   return (
-    <div className="w-full bg-stone-300">
+    <div className="w-full bg-stone-300 dark:bg-gray-700">
       <div className="w-3/4 mx-auto p-6 pt-20 ">
         {/* Header */}
         <div className="flex flex-col md:flex-row gap-10 items-center mb-12">
@@ -60,7 +60,7 @@ const Blogs = () => {
             <FaArrowLeft />
             Home
           </Link>
-          <h1 className="text-3xl font-mono font-bold text-gray-800 mb-4 md:mb-0">
+          <h1 className="text-3xl font-mono dark:text-gray-100 font-bold text-gray-800 mb-4 md:mb-0">
             Explore Our Blog Articles
           </h1>
 
@@ -101,9 +101,9 @@ const Blogs = () => {
         <div className="flex justify-center mt-12">
           <button
             onClick={handleModal}
-            className="btn btn-active bg-gray-400 hover:bg-gray-500 text-white"
+            className="btn btn-active bg-cyan-600 hover:bg-gray-500 text-white"
           >
-            View All Blogs <FaArrowRight className="ml-2" />
+            Read More Blogs <FaArrowRight className="ml-2" />
           </button>
         </div>
       </div>

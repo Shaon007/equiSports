@@ -9,9 +9,9 @@ const Navbar = () => {
   const [theme, setTheme] = useState("dark");
 
   const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
+    const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    document.documentElement.classList.toggle('dark', newTheme === 'light');
   };
 
   const [scrolled, setScrolled] = useState(false);
@@ -50,7 +50,7 @@ const Navbar = () => {
             <path
               d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
           </svg>
-          <input type="checkbox" value="synthwave" className="toggle theme-controller " />
+          <input type="checkbox" value="synthwave" onChange={toggleTheme} className="toggle theme-controller " />
           <svg
             className=""
             xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,7 @@ const Navbar = () => {
       {/* Dropdown Menu */}
       <div
         className={`lg:flex gap-5 ml-5 text-lg ${isMenuOpen
-          ? "flex flex-col absolute top-full left-[70%] md:left-[80%] transform -translate-x-1/2 w-[50%] md:w-[30%] lg:w-auto bg-zinc-300 p-4 space-y-1 z-50"
+          ? "flex flex-col absolute top-full left-[70%] md:left-[80%] transform -translate-x-1/2 w-[50%] md:w-[30%] lg:w-auto bg-gray-700 p-4 space-y-1 z-50"
           : "hidden"
           } lg:block`}
       >
@@ -141,26 +141,7 @@ const Navbar = () => {
         >
           Blogs
         </NavLink>
-        {/* <NavLink
-          to="/addNewProduct"
-          className={({ isActive }) =>
-            isActive
-              ? "text-cyan-200 hover:text-gray-600 underline underline-offset-8"
-              : "text-cyan-300 hover:text-cyan-500 transition-colors duration-200"
-          }
-        >
-          Add New
-        </NavLink> */}
-        {/* <NavLink
-          to="/myProduct"
-          className={({ isActive }) =>
-            isActive
-              ? "text-cyan-200 hover:text-gray-600 underline underline-offset-8"
-              : "text-cyan-300 hover:text-cyan-500 transition-colors duration-200"
-          }
-        >
-          My Equipment
-        </NavLink> */}
+
         <NavLink
           to="/about"
           className={({ isActive }) =>
@@ -187,21 +168,21 @@ const Navbar = () => {
           {user && user?.email ? (
             <button
               onClick={logOut}
-              className="px-4 py-2  border-2 rounded-lg text-stone-700 hover:bg-white hover:text-[#9333EA] transition"
+              className="px-4 py-2  border-2 rounded-lg text-stone-100 hover:bg-white hover:text-[#9333EA] transition"
             >
               Log Out
             </button>
           ) : (
-            <div className="flex gap-2">
+            <div className="flex gap-2 justify-center items-center">
               <Link
                 to="/login"
-                className="px-4 py-2  border-2 rounded-lg text-stone-700 hover:bg-white hover:text-[#9333EA] transition"
+                className="px-2 py-1  bg-cyan-300 rounded-lg text-stone-600 hover:bg-white hover:text-[#9333EA] transition"
               >
                 Log In
               </Link>
               <Link
                 to="/register"
-                className="px-4 py-2 border-2 rounded-lg text-stone-700 hover:bg-white hover:text-[#9333EA] transition"
+                className="px-2 py-1 bg-cyan-300 rounded-lg text-stone-600 hover:bg-white hover:text-[#9333EA] transition"
               >
                 Sign Up
               </Link>
@@ -227,7 +208,7 @@ const Navbar = () => {
             <path
               d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
           </svg>
-          <input type="checkbox" value="synthwave" className="toggle theme-controller" />
+          <input type="checkbox" value="synthwave" onChange={toggleTheme} className="toggle theme-controller " />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"

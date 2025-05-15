@@ -28,22 +28,21 @@ const AutoSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="relative w-full">
-      {/* Carousel wrapper */}
-      <div className="relative h-screen overflow-hidden rounded-md shadow-md">
+      <div className="relative h-[250px] md:h-[400px] lg:h-screen overflow-hidden rounded-md shadow-md">
         {images.map((image, index) => (
           <div
             key={index}
-            className={`${currentIndex === index ? "block" : "hidden"} duration-1000 transition-all ease-in-out`}
+            className={`${currentIndex === index ? "block" : "hidden"} transition-opacity duration-1000 ease-in-out`}
           >
             <img
               src={image}
-              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              className="absolute w-full h-full object-cover"
               alt={`Slide ${index + 1}`}
             />
 
@@ -51,24 +50,24 @@ const AutoSlider = () => {
               <motion.div
                 key={`slide-${index}`}
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                animate={{ opacity: 0.5 }}
                 transition={{ duration: 0.8 }}
-                className="absolute w-full h-full bg-black/50 flex flex-col justify-center items-start px-10 text-gray-200"
+                className="absolute w-full h-full bg-black/50 flex flex-col justify-center px-6 sm:px-10 lg:px-20 text-white"
               >
-                <motion.span
+                <motion.h2
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
-                  className="pl-10 pt-20 text-xl font-mono md:text-3xl lg:text-5xl lg:w-[650px] font-bold"
+                  className="text-lg sm:text-2xl md:text-3xl lg:text-5xl font-bold font-mono max-w-2xl"
                 >
                   {sliderContent[index].slogan}
-                </motion.span>
+                </motion.h2>
 
                 <motion.p
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="pl-10 w-[400px] mt-2 text-base font-mono md:text-lg lg:text-xl"
+                  className="mt-2 text-sm sm:text-base md:text-lg lg:text-xl font-mono max-w-xl"
                 >
                   {sliderContent[index].subheading}
                 </motion.p>

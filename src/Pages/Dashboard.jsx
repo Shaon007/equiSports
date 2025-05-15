@@ -35,7 +35,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen grid grid-cols-1 md:grid-cols-[250px_1fr] bg-gray-50">
+    <div className="min-h-screen grid grid-cols-1 md:grid-cols-[250px_1fr] bg-gray-500">
       {/* Sidebar */}
       <aside className="bg-gray-600 text-white font-mono flex flex-col p-6">
         <div className="flex gap-4 justify-center ">
@@ -45,7 +45,7 @@ const Dashboard = () => {
           >
             <FaHouseChimney/>
           </button>
-          <h2 className="text-3xl font-bold mb-10 text-center tracking-wide">Dashboard</h2>
+          <h2 className="text-2xl font-bold mb-10 text-center tracking-wide">Dashboard</h2>
         </div>
         <nav className="space-y-2">
           {navItems.map(({ id, label, icon }) => (
@@ -69,7 +69,7 @@ const Dashboard = () => {
 
       {/* Main Content */}
       <main className="p-8  overflow-y-auto">
-        <h1 className="text-2xl font-semibold mb-6 font-mono text-gray-800 border-b pb-2">
+        <h1 className="text-2xl font-semibold mb-6 font-mono text-gray-100 border-b pb-2">
           {navItems.find((item) => item.id === activePage)?.label}
         </h1>
         <div className="bg-white shadow-md p-4 rounded-lg">

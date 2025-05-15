@@ -53,10 +53,10 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-stone-200 px-4">
-      <div className="flex flex-col lg:flex-row items-center gap-8 bg-white shadow-lg rounded-lg p-6 lg:p-10 max-w-6xl w-full">
+    <div className="flex justify-center items-center  h-screen bg-stone-200 dark:bg-gray-700 px-4">
+      <div className="flex flex-col lg:flex-row items-center gap-8 bg-white dark:bg-stone-200 shadow-lg rounded-lg p-6 lg:p-10 max-w-6xl w-full mt-16 mb-10 md:mt-0 md:mb-0">
         {/* Left: Form */}
-        <div className="w-full max-w-md">
+        <div className="w-full  max-w-md ">
           <h2 className="text-2xl font-bold font-mono text-center text-cyan-800 mb-6">Register</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">

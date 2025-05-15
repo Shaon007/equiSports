@@ -12,17 +12,17 @@ const MyProduct = () => {
   );
 
   return (
-    <div className=" py-10">
+    <div className=" lg:py-10">
       <div className="container mx-auto px-4">
         <div className="mb-12">
-          <h1 className="mb-4 text-4xl font-semibold ">Hello, <span className="text-orange-800">{user?.displayName}</span></h1>
-          <p className="text-lg text-gray-700">
+          <h1 className="mb-4 text-2xl lg:text-4xl font-mono font-semibold ">Hello, <span className="text-orange-800">{user?.displayName}</span></h1>
+          <p className="text-sm lg:text-lg text-gray-700">
             {filteredProducts.length > 0
               ? "Here are the products you added:"
               : "No products found."}
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-6">
           {filteredProducts.map((product, index) => {
             const { _id, name, rating, details, photo, price } = product;
             return (
@@ -31,7 +31,7 @@ const MyProduct = () => {
                 className="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden"
               >
                 <img
-                  className="h-56 w-full object-cover"
+                  className="h-32 lg:h-56 w-full object-cover"
                   src={photo}
                   alt={name}
                 />

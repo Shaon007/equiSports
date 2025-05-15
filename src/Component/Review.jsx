@@ -46,7 +46,7 @@ const Review = () => {
             key={review.id}
             className={`carousel-item relative w-full ${index === activeIndex ? 'block' : 'hidden'}`}
           >
-            <div className="w-full h-[400px] bg-[url('https://i.pinimg.com/1200x/de/72/53/de7253455fba99aac503e15e8830dc12.jpg')] bg-cover bg-fixed bg-center bg-no-repeat brightness-75  flex flex-col justify-center items-center text-gray-600 font-mono px-4 text-center">
+            <div className="w-full h-[300px] md:h-[400px] bg-[url('https://i.pinimg.com/1200x/de/72/53/de7253455fba99aac503e15e8830dc12.jpg')] bg-cover bg-fixed bg-center bg-no-repeat brightness-75  flex flex-col justify-center items-center text-gray-600 font-mono px-4 text-center">
               <Zoom>
                 <blockquote className="text-xl md:text-3xl  font-semibold mb-4 max-w-2xl">
                   “{review.quote}”

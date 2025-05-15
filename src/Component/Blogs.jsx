@@ -24,14 +24,14 @@ const Blogs = () => {
           />
           <div className="lg:w-11/12 mx-auto ">
             <span className="text-green-700 text-sm mt-4 block">Athletics</span>
-            <h1 className="text-gray-800 text-3xl font-bold mt-2 mb-2 leading-tight ">
+            <h1 className="text-gray-800 text-3xl font-bold font-mono mt-2 mb-2 leading-tight ">
               Injury Prevention in Athletics
             </h1>
-            <p className="md:text-sm lg:text-base text-gray-600 mb-2 lg:mb-4">
+            <p className="md:text-sm lg:text-base font-mono text-gray-600 mb-2 lg:mb-4">
               Achieving your athletic goals requires consistent effort, dedication, and discipline. An often overlooked yet critical aspect of training is injury prevention. Injuries can set you back, disrupt your progress, and demotivate you. To keep moving forward without setbacks, here are some essential tips and...
             </p>
             <button onClick={() => navigate('/blogs')}
-              className="inline-block px-6 py-3 mt-2 rounded-md bg-cyan-600 text-white font-semibold hover:bg-gray-500 transition duration-300"
+              className="inline-block px-6 py-3 mt-2 rounded-md bg-cyan-600 text-white font-semibold hover:bg-gray-500 hover:scale-95 transition duration-300"
             >
               Read more
             </button>
@@ -48,8 +48,8 @@ const Blogs = () => {
               alt=""
             />
             <div className="bg-white rounded px-4 pt-2 flex-1">
-              <span className="text-green-700 text-sm">Fitness Tips</span>
-              <div className="text-gray-800 font-semibold text-lg mb-2">
+              <span className="text-green-700 text-sm font-mono">Fitness Tips</span>
+              <div className="text-gray-800 font-semibold font-mono text-lg mb-2">
                 Tips to Maximize Your Workout and Improve Performance
               </div>
 
@@ -64,8 +64,8 @@ const Blogs = () => {
               alt=""
             />
             <div className="bg-white rounded px-4 pt-2  flex-1">
-              <span className="text-green-700 text-sm">Sports Nutrition </span>
-              <div className="text-gray-800 font-semibold text-lg mb-2">
+              <span className="text-green-700 text-sm font-mono">Sports Nutrition </span>
+              <div className="text-gray-800 font-semibold font-mono text-lg mb-2">
                 Fuel Your Body for Optimal Performance and Recovery
               </div>
 
@@ -80,8 +80,8 @@ const Blogs = () => {
               alt=""
             />
             <div className="bg-white rounded px-4 pt-2 flex-1">
-              <span className="text-green-700 text-sm">Game Analysis</span>
-              <div className="text-gray-800 font-semibold text-lg mb-2">
+              <span className="text-green-700 font-mono text-sm">Game Analysis</span>
+              <div className="text-gray-800 font-semibold font-mono text-lg mb-2">
                 Detailed Reviews and Insights from the Latest Matches
               </div>
 
@@ -89,7 +89,7 @@ const Blogs = () => {
 
           </div>
           <div>
-            <button onClick={() => navigate('/blogs')} className="btn btn-active bg-cyan-600 text-white hover:bg-gray-500" >View all <FaArrowRight></FaArrowRight></button>
+            <button onClick={() => navigate('/blogs')} className="btn btn-active bg-cyan-600 text-white hover:scale-95 hover:bg-gray-500" >View all <FaArrowRight></FaArrowRight></button>
           </div>
         </div>
       </div>

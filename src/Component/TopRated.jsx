@@ -25,10 +25,10 @@ const TopRated = () => {
       <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
         {/* Text section */}
         <div className="lg:w-1/2 text-center lg:text-left">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-cyan-800 font-mono mb-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-cyan-800 font-mono mb-4">
              Top Rated Products
           </h2>
-          <p className="text-lg md:text-xl text-gray-700 font-mono leading-relaxed">
+          <p className="text-md md:text-xl text-gray-700 font-mono leading-relaxed">
             Dive into our most loved and highest-reviewed products — handpicked by your fellow sports lovers.
           </p>
         </div>

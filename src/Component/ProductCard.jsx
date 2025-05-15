@@ -6,19 +6,19 @@ const ProductCard = ({ product }) => {
   const capitalizedProductName = name.charAt(0).toUpperCase() + name.slice(1);
 
   return (
-    <div className="relative group lg:w-[300px] lg:h-[424px] bg-white shadow-lg border border-gray-200 rounded-lg  dark:bg-gray-800 dark:border-gray-700 hover:scale-105 transition-transform duration-500">
+    <div className="relative group lg:w-[300px] lg:h-[424px] bg-white shadow-lg border border-gray-200 rounded-lg  dark:bg-gray-600 dark:border-gray-700 hover:scale-105 transition-transform duration-500">
       <div className="transform transition-transform duration-300 ">
         <img
-          className="rounded-t-lg rounded-b-none h-[200px] w-full object-cover "
+          className="rounded-t-lg rounded-b-none h-[150px] md:h-[200px] w-full object-cover "
           src={photo}
           alt="product"
         />
 
         <div className="px-5 pb-5">
-          <h5 className="text-2xl mt-3 font-semibold tracking-tight text-gray-700 dark:text-white h-[36px] overflow-hidden font-mono">
+          <h5 className="text-xl md:text-2xl mt-3 font-semibold tracking-tight text-gray-700 dark:text-white h-[36px] overflow-hidden font-mono">
             {capitalizedProductName}
           </h5>
-          <p className="text-gray-700 font-mono dark:text-gray-400 h-[62px] overflow-hidden text-sm">
+          <p className="text-gray-700 font-mono dark:text-gray-400 text-xs md:text-sm overflow-hidden text-ellipsis whitespace-normal max-h-[2.8em] md:max-h-[4.2em] leading-snug">
             {details}
           </p>
           <div className="flex items-center mt-2.5 mb-5">
@@ -39,13 +39,13 @@ const ProductCard = ({ product }) => {
               {rating}
             </span>
           </div>
-          <div className="flex md:flex-col lg:flex-row lg:items-center justify-between">
-            <span className="text-3xl mb-2 font-bold text-gray-900 dark:text-white">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between">
+            <span className="text-xl md:text-3xl mb-2 font-bold text-gray-900 dark:text-white">
               ${price}
             </span>
             <Link
               to={`/product/${_id}`}
-              className="px-3 py-1 test-sm text-white bg-cyan-600 hover:bg-cyan-700 rounded-lg hover:scale-90"
+              className="px-3 py-2 mx-auto md:m-0 md:test-sm text-white bg-cyan-600 hover:bg-cyan-700 rounded-lg hover:scale-90"
             >
               Learn More
             </Link>

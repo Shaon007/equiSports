@@ -65,7 +65,7 @@ const AddNewProduct = () => {
         onSubmit={handleAddProduct}
         className="max-w-5xl mx-auto bg-[#F4F3F0] px-4 md:px-8 py-4 rounded-xl"
       >
-        
+
         <div className="flex flex-wrap">
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">

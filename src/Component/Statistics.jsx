@@ -18,10 +18,10 @@ const barData = [
 
 const Statistics = () => {
   return (
-    <div className="p-8 bg-gray-100  font-sans">
+    <div className="md:p-8 bg-gray-100  font-sans">
 
       {/* Stat Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+      <div className="grid grid-cols-1 grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
         <div className="bg-white p-6 rounded-lg shadow text-center">
           <h3 className="text-sm text-gray-500 mb-2">Total Users</h3>
           <p className="text-2xl font-semibold text-indigo-600">1,245</p>
@@ -41,7 +41,7 @@ const Statistics = () => {
       </div>
 
       {/* Charts Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div className="bg-white p-6 rounded-lg shadow">
           <h3 className="text-lg font-semibold mb-4">Monthly Growth</h3>
           <ResponsiveContainer width="100%" height={300}>

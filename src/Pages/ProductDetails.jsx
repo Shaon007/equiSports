@@ -71,66 +71,69 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto  mt-20 p-6 bg-white rounded-lg shadow-lg my-20">
-      <button
-        onClick={() => navigate(-1)}
-        className=" bg-cyan-600 h-8 gap-2 flex items-center justify-center text-gray-100 p-3 font-semibold mb-4 rounded-lg hover:bg-gray-500 transition"
-      > <FaArrowLeft />
-        Back
-      </button>
-      <div className="flex flex-col lg:flex-row gap-10 lg:gap-20">
+    <div className="min-h-screen pt-14 md:pt-0 w-full bg-stone-300 dark:bg-gray-700 flex items-center justify-center">
+      <div className="max-w-6xl w-10/12 md:w-full p-6 bg-white dark:bg-stone-100 rounded-lg shadow-lg">
 
-        {/* Product Image */}
-        <div className="flex flex-col flex-shrink-0 justify-center items-center lg:w-1/3">
-          <img
-            src={product.photo}
-            alt={capitalizedProductName}
-            className="rounded-lg w-full object-contain"
-          />
-          <div className="flex flex-col lg:flex-row gap-4 my-4 ">
-            <span className="text-3xl font-semibold text-gray-800">${product.price}</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-lg">
-              ⭐ {product.rating} / 5
-            </span>
+        <button
+          onClick={() => navigate(-1)}
+          className=" bg-cyan-600 h-8 gap-2 flex items-center justify-center text-gray-100 p-3 font-semibold mb-4 rounded-lg hover:bg-gray-500 transition"
+        > <FaArrowLeft />
+          Back
+        </button>
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-20">
+
+          {/* Product Image */}
+          <div className="flex flex-col flex-shrink-0 justify-center items-center lg:w-1/3">
+            <img
+              src={product.photo}
+              alt={capitalizedProductName}
+              className="rounded-lg w-full object-contain"
+            />
+            <div className="flex flex-col lg:flex-row gap-2 my-2 md:gap-4 md:my-4 mx-auto md:mx-0 ">
+              <span className="text-2xl md:text-3xl font-semibold text-gray-800">${product.price}</span>
+              <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-lg">
+                ⭐ {product.rating} / 5
+              </span>
+            </div>
           </div>
-        </div>
 
-        {/* Product Information */}
-        <div className="flex flex-col lg:w-3/5 gap-6">
-          <h1 className="text-4xl font-mono font-bold text-gray-800">{capitalizedProductName}</h1>
-          <p className="text-gray-600 font-mono mb-2">{product.details}</p>
+          {/* Product Information */}
+          <div className="flex flex-col lg:w-3/5 gap-6">
+            <h1 className="text-2xl md:text-4xl font-mono font-bold text-gray-800">{capitalizedProductName}</h1>
+            <p className="text-gray-600  font-mono mb-2">{product.details}</p>
 
-          {/* Specifications Section */}
-          <div className="mb-4">
-            <h2 className="text-2xl font-bold text-gray-800 font-mono mb-3">Specifications</h2>
-            <ul className="list-disc font-mono list-inside space-y-1 text-gray-700">
-              <li>High-quality material</li>
-              <li>Durable and long-lasting</li>
-              <li>Available in multiple colors</li>
-              <li>1-year warranty</li>
-            </ul>
-          </div>
-          <p className="text-gray-700 font-mono">
-            <strong>Category:</strong> {product.category}
-          </p>
+            {/* Specifications Section */}
+            <div className="mb-4">
+              <h2 className="text-2xl font-bold text-gray-800 font-mono mb-3">Specifications</h2>
+              <ul className="list-disc font-mono list-inside space-y-1 text-gray-700">
+                <li>High-quality material</li>
+                <li>Durable and long-lasting</li>
+                <li>Available in multiple colors</li>
+                <li>1-year warranty</li>
+              </ul>
+            </div>
+            <p className="text-gray-700 font-mono">
+              <strong>Category:</strong> {product.category}
+            </p>
 
-          {/* Buttons */}
-          <div className="flex flex-wrap gap-4">
-            <Link
-              to={`/updateProduct/${product._id}`}
-              className="px-6 py-2 flex justify-center items-center bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700"
-            >
-              <FaGear></FaGear>
-            </Link>
-            <button
-              onClick={() => handleDelete(id)}
-              className="px-6 py-2 bg-red-800 text-white rounded-lg shadow-md hover:bg-red-900"
-            >
-              <FaTrash></FaTrash>
-            </button>
-            <button onClick={handleBuy} className="px-6 py-2 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-yellow-600">
-              <FaShoppingCart></FaShoppingCart>
-            </button>
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-4">
+              <Link
+                to={`/updateProduct/${product._id}`}
+                className="px-6 py-2 flex justify-center items-center bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700"
+              >
+                <FaGear></FaGear>
+              </Link>
+              <button
+                onClick={() => handleDelete(id)}
+                className="px-6 py-2 bg-red-800 text-white rounded-lg shadow-md hover:bg-red-900"
+              >
+                <FaTrash></FaTrash>
+              </button>
+              <button onClick={handleBuy} className="px-6 py-2 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-yellow-600">
+                <FaShoppingCart></FaShoppingCart>
+              </button>
+            </div>
           </div>
         </div>
       </div>

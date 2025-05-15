@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="bg-stone-300 font-sans text-gray-800">
+    <div className="bg-stone-300 dark:bg-gray-600 font-sans text-gray-800">
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center min-h-screen flex items-center justify-center"
@@ -44,7 +44,7 @@ const About = () => {
         {/* Content */}
         <div className="relative max-w-6xl mx-auto text-center text-white z-10">
           <h2 className="text-3xl md:text-4xl font-bold font-mono mb-6">Our Journey</h2>
-          <p className="text-lg leading-relaxed font-mono max-w-3xl mx-auto">
+          <p className="text-sm md:text-lg leading-relaxed font-mono max-w-3xl mx-auto">
             Founded in 2020, our mission has always been simple: to empower athletes of every level with high-quality, affordable, and reliable sports gear. From our humble beginnings in a small warehouse to serving thousands of happy customers, we've stayed committed to our values of performance, trust, and innovation.
           </p>
         </div>
@@ -52,12 +52,12 @@ const About = () => {
 
 
       {/* Mission Section */}
-      <section className="bg-gray-100 py-16 px-6">
+      <section className="bg-gray-100 dark:bg-gray-700 py-16 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <img src="https://i.pinimg.com/1200x/47/fd/8e/47fd8ea0dfe65476e664beeffc2cda71.jpg" alt="Mission" className="rounded-xl shadow-md w-full h-[350px] object-cover" />
           <div>
-            <h3 className="text-3xl font-bold font-mono mb-4">Our Mission</h3>
-            <p className="text-gray-600 font-mono text-lg leading-relaxed">
+            <h3 className="text-3xl font-bold dark:text-gray-100 font-mono mb-4">Our Mission</h3>
+            <p className="text-gray-600 font-mono dark:text-gray-100 text-lg leading-relaxed">
               We aim to redefine your shopping experience by offering cutting-edge sports equipment and gear. Whether you're a beginner or a pro athlete, we believe that everyone deserves the best tools to excel, stay safe, and enjoy their sport.
             </p>
           </div>

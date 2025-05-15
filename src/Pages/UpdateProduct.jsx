@@ -61,7 +61,7 @@ const UpdateProduct = () => {
   }
 
   return (
-    <div className="flex justify-center items-center my-20 =">
+    <div className="flex justify-center items-center py-20 dark:bg-gray-700 min-h-screen">
 
       <form
         onSubmit={handleUpdateProduct}
