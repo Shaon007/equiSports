@@ -46,7 +46,7 @@ const MyProduct = () => {
                   <p className="text-yellow-500 text-sm">Rating: {rating}/5</p>
 
                   <div className="flex gap-4 mt-4">
-                    <Link to={`/product/${_id}`} className="btn btn-primary">
+                    <Link to={`/product/${_id}`} className="btn bg-cyan-600 ">
                       View Details
                     </Link>
                   </div>

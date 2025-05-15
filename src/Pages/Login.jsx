@@ -4,6 +4,8 @@ import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../Provider/AuthProvider';
 import auth from '../firebase/Firebase.init';
+import Lottie from 'lottie-react';
+import loginAnim from '../assets/lottie/login.json';
 
 const Login = () => {
   const provider = new GoogleAuthProvider();
@@ -20,7 +22,6 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log(result);
         toast.success('Google login successful!');
         navigate(location?.state || '/');
       })
@@ -37,15 +38,13 @@ const Login = () => {
 
     userLogin(email, password)
       .then((result) => {
-        const user = result.user;
-        setUser(user);
+        setUser(result.user);
         toast.success('Login successful!');
         setIsForgetPassActive(false);
         navigate(location?.state || '/');
       })
       .catch((err) => {
         setError({ ...error, login: err.code });
-        console.error(err);
         toast.error('Invalid credentials. Please try again.');
         setIsForgetPassActive(true);
       });
@@ -53,20 +52,18 @@ const Login = () => {
 
   const handleForgetPass = () => {
     if (!isForgetPassActive) {
-      toast.error('Forget Pass disabled ');
+      toast.error('Forget Pass disabled');
       return;
     }
     // navigate('/forgot', { state: forgetEmail });
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-[#f7f7f7]">
+    <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen bg-stone-200 px-4">
+      {/* Login Form */}
       <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg">
-        <h2 className="text-2xl font-bold text-center text-[#9333EA] mb-6">Login</h2>
-
-        {/* Login Form */}
+        <h2 className="text-2xl font-bold text-center text-cyan-800 mb-6">Login</h2>
         <form onSubmit={handleSubmit}>
-          {/* Email Input */}
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
             <input
@@ -77,11 +74,9 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9333EA]"
+              className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300"
             />
           </div>
-
-          {/* Password Input */}
           <div className="mb-4">
             <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
             <input
@@ -92,46 +87,37 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
-              className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9333EA]"
+              className="w-full p-3 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300"
             />
           </div>
-          {error.login && <label className="label text-sm text-red-700">{error.login}</label>}
-
-          {/* Forgot Password */}
+          {error.login && <p className="text-sm text-red-700">{error.login}</p>}
           <p
             onClick={handleForgetPass}
-            className={`cursor-pointer text-[#9333EA] hover:underline ${!isForgetPassActive ? 'opacity-50 cursor-not-allowed' : ''
-              }`}
+            className={`cursor-pointer text-[#9333EA] hover:underline mb-4 ${!isForgetPassActive ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
             Forgot Password?
           </p>
-
-          {/* Login Button */}
-          <div className="my-4">
-            <button type="submit" className="w-full p-3 bg-[#9333EA] text-white rounded-lg shadow-md hover:bg-[#7b2ad7]">
-              Sign In
-            </button>
-          </div>
+          <button type="submit" className="w-full p-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 hover:scale-95 ">Sign In</button>
         </form>
 
-        {/* Google Login Button */}
-        <div className="mb-6 mt-2">
+        <div className="my-4">
           <button
             onClick={handleGoogleSignIn}
-            className="mb-2 w-full flex items-center justify-center gap-3 p-3 bg-[#4285F4] text-white rounded-lg shadow-md hover:bg-[#357ae8]"
+            className="w-full flex items-center justify-center gap-3 p-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 hover:scale-95 "
           >
             <i className="fa-brands fa-google"></i>
             Sign in with Google
           </button>
         </div>
 
-        {/* Register Now */}
-        <div className="text-center">
-          <p className="text-sm">
-            New here?{' '}
-            <Link to="/register" className="text-[#9333EA] hover:underline">Register now</Link>
-          </p>
-        </div>
+        <p className="text-sm text-center">
+          New here? <Link to="/register" className="text-[#9333EA] hover:underline">Register now</Link>
+        </p>
+      </div>
+
+      {/* Lottie Animation */}
+      <div className="hidden lg:block w-full max-w-md p-6">
+        <Lottie animationData={loginAnim} loop={true} />
       </div>
     </div>
   );
