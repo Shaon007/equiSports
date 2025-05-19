@@ -7,7 +7,7 @@ const Features = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Feature 1 */}
-          <div className="p-6 bg-gray-100 dark:bg-gray-500 rounded-lg shadow hover:shadow-lg transition">
+          <div className="p-6 bg-gray-300 dark:bg-gray-600 rounded-lg shadow hover:shadow-lg transition hover:scale-105 ">
             <svg
               className="mx-auto mb-4 h-12 w-12 text-cyan-600  dark:text-cyan-300"
               fill="none"
@@ -23,13 +23,13 @@ const Features = () => {
               />
             </svg>
             <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Premium Quality</h3>
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className="text-gray-700 dark:text-white">
               We offer only the best sports gear built to last through every game and training session.
             </p>
           </div>
 
           {/* Feature 2 */}
-          <div className="p-6 bg-gray-100 dark:bg-gray-500 rounded-lg shadow hover:shadow-lg transition">
+          <div className="p-6 bg-gray-300 dark:bg-gray-600 rounded-lg shadow hover:shadow-lg transition hover:scale-105 ">
             <svg
               className="mx-auto mb-4 h-12 w-12 text-cyan-600  dark:text-cyan-300"
               fill="none"
@@ -45,13 +45,13 @@ const Features = () => {
               />
             </svg>
             <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Fast & Reliable Shipping</h3>
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className="text-gray-700 dark:text-white">
               Get your sports equipment delivered quickly and safely to your doorstep.
             </p>
           </div>
 
           {/* Feature 3 */}
-          <div className="p-6 bg-gray-100 dark:bg-gray-500 rounded-lg shadow hover:shadow-lg transition">
+          <div className="p-6 bg-gray-300 dark:bg-gray-600 rounded-lg shadow hover:shadow-lg transition hover:scale-105 ">
             <svg
               className="mx-auto mb-4 h-12 w-12 text-cyan-600 dark:text-cyan-300"
               fill="none"
@@ -67,7 +67,7 @@ const Features = () => {
               />
             </svg>
             <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Hassle-Free Returns</h3>
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className="text-gray-700 dark:text-white">
               Not satisfied? Return your product easily within 30 days for a full refund.
             </p>
           </div>

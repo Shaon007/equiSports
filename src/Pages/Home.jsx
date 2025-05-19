@@ -54,8 +54,8 @@ const Home = () => {
               backgroundImage: "url('https://i.pinimg.com/1200x/88/4c/3c/884c3c4285c79df0be1371b5344788da.jpg')",
             }}
           >
-            <div className="bg-gray-600 bg-opacity-50 w-full h-full absolute top-0 left-0"></div>
-            <h2 className="relative z-10 text-4xl md:text-5xl text-white font-mono font-semibold">
+            <div className="bg-gray-2500 bg-opacity-40 w-full h-full absolute top-0 left-0"></div>
+            <h2 className="relative z-10 text-4xl md:text-5xl text-gray-700 font-mono font-bold">
               Explore Our Products
             </h2>
 
@@ -115,7 +115,7 @@ const Home = () => {
         <TopRated></TopRated>
       </div>
       <div className="my-20 mx-auto">
-        <h2 className="text-2xl md:text-3xl text-center mt-12 font-mono font-semibold">-- Some Satisfied Customers --</h2>
+        <h2 className="text-2xl md:text-3xl text-center mt-12 font-mono font-semibold dark:text-white">-- Some Satisfied Customers --</h2>
         <Review></Review>
       </div>
       <div>

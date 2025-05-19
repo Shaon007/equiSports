@@ -24,7 +24,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className={`max-w-[1600px] mx-auto flex justify-between items-center px-2 md:px-16 py-2  fixed top-0 w-full z-50 shadow-lg transition-all duration-300 ${scrolled ? "bg-gray-500 shadow-md" : "bg-stone-800  bg-opacity-30"
+    <div className={`max-w-[1600px] mx-auto flex justify-between items-center px-2 md:px-16 py-2  fixed top-0 w-full z-50 shadow-lg transition-all duration-300 ${scrolled ? "bg-gray-500 shadow-md" : "bg-stone-800  bg-opacity-50"
       }`}>
       {/* Logo */}
       <div className="text-lg gap-2 flex justify-center items-center">
@@ -117,6 +117,7 @@ const Navbar = () => {
               ? "text-cyan-200 hover:text-gray-600 underline underline-offset-8"
               : "text-cyan-300 hover:text-cyan-500 transition-colors duration-200"
           }
+          onClick={() => setIsMenuOpen(false)}
         >
           Home
         </NavLink>
@@ -128,6 +129,7 @@ const Navbar = () => {
               ? "text-cyan-200 hover:text-gray-600 underline underline-offset-8"
               : "text-cyan-300 hover:text-cyan-500 transition-colors duration-200"
           }
+          onClick={() => setIsMenuOpen(false)}
         >
           All Equipment
         </NavLink>
@@ -138,6 +140,7 @@ const Navbar = () => {
               ? "text-cyan-200 hover:text-gray-600 underline underline-offset-8"
               : "text-cyan-300 hover:text-cyan-500 transition-colors duration-200"
           }
+          onClick={() => setIsMenuOpen(false)}
         >
           Blogs
         </NavLink>
@@ -149,6 +152,7 @@ const Navbar = () => {
               ? "text-cyan-200 hover:text-gray-600 underline underline-offset-8"
               : "text-cyan-300 hover:text-cyan-500 transition-colors duration-200"
           }
+          onClick={() => setIsMenuOpen(false)}
         >
           About Us
         </NavLink>
@@ -159,6 +163,7 @@ const Navbar = () => {
               ? "text-cyan-200 hover:text-gray-600 underline underline-offset-8"
               : "text-cyan-300 hover:text-cyan-500 transition-colors duration-200"
           }
+          onClick={() => setIsMenuOpen(false)}
         >
           Dashboard
         </NavLink>

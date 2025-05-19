@@ -71,7 +71,7 @@ const UpdateProduct = () => {
           onClick={() => navigate(-1)}
           className=" bg-cyan-600 h-8 gap-2 flex items-center justify-center text-gray-100 p-3 font-semibold  rounded-lg hover:bg-gray-500 transition"
         > <FaArrowLeft/>
-          Home
+          Back
         </button>
         <h6 className="text-gray-800 font-mono text-3xl mt-3 mb-6 font-bold  text-center">
           Update Product

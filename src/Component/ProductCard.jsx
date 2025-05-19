@@ -18,7 +18,7 @@ const ProductCard = ({ product }) => {
           <h5 className="text-xl md:text-2xl mt-3 font-semibold tracking-tight text-gray-700 dark:text-white h-[36px] overflow-hidden font-mono">
             {capitalizedProductName}
           </h5>
-          <p className="text-gray-700 font-mono dark:text-gray-400 text-xs md:text-sm overflow-hidden text-ellipsis whitespace-normal max-h-[2.8em] md:max-h-[4.2em] leading-snug">
+          <p className="text-gray-700 font-mono  dark:text-white text-xs md:text-sm overflow-hidden text-ellipsis whitespace-normal max-h-[2.8em] md:max-h-[4.2em] leading-snug">
             {details}
           </p>
           <div className="flex items-center mt-2.5 mb-5">
@@ -45,7 +45,7 @@ const ProductCard = ({ product }) => {
             </span>
             <Link
               to={`/product/${_id}`}
-              className="px-3 py-2 mx-auto md:m-0 md:test-sm text-white bg-cyan-600 hover:bg-cyan-700 rounded-lg hover:scale-90"
+              className="px-3 py-2 mx-auto md:m-0 md:test-sm text-white bg-cyan-600 hover:bg-cyan-700 font-semibold rounded-lg hover:scale-90"
             >
               Learn More
             </Link>

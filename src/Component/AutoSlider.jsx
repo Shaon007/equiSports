@@ -50,7 +50,7 @@ const AutoSlider = () => {
               <motion.div
                 key={`slide-${index}`}
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 0.5 }}
+                animate={{ opacity: 0.7 }}
                 transition={{ duration: 0.8 }}
                 className="absolute w-full h-full bg-black/50 flex flex-col justify-center px-6 sm:px-10 lg:px-20 text-white"
               >
@@ -58,7 +58,7 @@ const AutoSlider = () => {
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8 }}
-                  className="text-lg sm:text-2xl md:text-3xl lg:text-5xl font-bold font-mono max-w-2xl"
+                  className="text-lg  sm:text-2xl md:text-3xl lg:text-5xl font-bold font-mono max-w-2xl"
                 >
                   {sliderContent[index].slogan}
                 </motion.h2>

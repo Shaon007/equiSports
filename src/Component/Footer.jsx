@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -26,7 +27,7 @@ const Footer = () => {
       <footer className="max-w-[1600px] mx-auto flex justify-center px-4 text-gray-800 bg-[#1F2937]">
         <div className="container px-6 py-6">
           <Link to='/' className="flex justify-center text-white">
-            <img className="w-36 lg:w-44" src="https://i.postimg.cc/Rhn1dWfV/Screenshot-2024-12-08-210839-removebg-preview.png" alt="" />
+            <img className="w-36 lg:w-44" src="https://i.postimg.cc/Rhn1dWfV/Screenshot-2024-12-08-210839-removebg-preview.png" alt="icon" />
           </Link>
 
           <div className="flex flex-col justify-center mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
@@ -35,7 +36,7 @@ const Footer = () => {
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="px-4 py-2 text-gray-700 bg-white border rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
+              className="px-4 py-2 text-gray-800 bg-white border rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
               placeholder="Email Address"
             />
             <button
@@ -53,31 +54,31 @@ const Footer = () => {
               <div className="flex justify-center items-center">
                 <Link
                   to="/"
-                  className="px-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline"
+                  className="px-4 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-500 hover:underline"
                 >
                   Home
                 </Link>
                 <Link
                   to="/blogs"
-                  className="px-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline"
+                  className="px-4 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-500 hover:underline"
                 >
                   Blogs
                 </Link>
                 <Link
                   to="/myProfile"
-                  className="px-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline"
+                  className="px-4 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-500 hover:underline"
                 >
                   Profile
                 </Link>
                 <Link
                   to="/about"
-                  className="px-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline"
+                  className="px-4 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-500 hover:underline"
                 >
                   About Us
                 </Link>
                 <button
                   onClick={handleModal}
-                  className="px-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 hover:underline"
+                  className="px-4 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-500 hover:underline"
                 >
                   Contact Us
                 </button>
@@ -100,7 +101,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-blue-500"
             >
-              <FaTwitter size={24} />
+              <FaXTwitter size={24} />
             </a>
             <a
               href="https://instagram.com"
@@ -120,7 +121,7 @@ const Footer = () => {
             </a>
           </div>
 
-          <div className="mt-6 text-center text-sm text-gray-500">
+          <div className="mt-6 text-center text-sm text-gray-400">
             &copy; {new Date().getFullYear()} EquiSports. All rights reserved.
           </div>
         </div>
